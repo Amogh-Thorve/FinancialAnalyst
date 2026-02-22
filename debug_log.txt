@@ -1,0 +1,528 @@
+[1768372346.3272798] Calling OVERVIEW for IBM
+[1768372347.2100995] OVERVIEW call done. Data: True
+[1768372347.2108521] No data for IBM in OVERVIEW
+[1768372347.2129724] Promoting metrics with LLM...
+[1768372361.745865] LLM response received. Length: 2476
+[1768372361.746664] Calling sentiment_analyzer for IBM
+[1768372362.7824097] Sentiment analysis complete
+[1768372362.8955462] metrics extraction complete. Keys: ['company_name', 'company_description', 'fiscal_year', 'revenue', 'net_income', 'revenue_growth', 'profit_margin', 'risk_score', 'volatility', 'eps', 'pe_ratio', 'roe', 'revenue_cagr', 'debt_equity', 'current_ratio', 'ownership', 'beta', 'market_cap', 'dividend_yield', 'free_cash_flow', 'price_to_book', 'red_flags', 'risk_details', 'revenue_segments', 'sentiment', 'sentiment_trend', '_validation', 'eps_confidence', 'eps_status', 'roe_confidence', 'roe_status', 'debt_equity_confidence', 'debt_equity_status', 'profit_margin_confidence', 'profit_margin_status']
+[1768372416.3032281] Calling OVERVIEW for AAPL
+[1768372417.2936695] OVERVIEW call done. Data: True
+[1768372417.2942128] No data for AAPL in OVERVIEW
+[1768372417.2961118] Promoting metrics with LLM...
+[1768372443.7291613] LLM response received. Length: 2696
+[1768372443.729967] Calling sentiment_analyzer for AAPL
+[1768372444.7298229] Sentiment analysis complete
+[1768372444.8881629] metrics extraction complete. Keys: ['company_name', 'company_description', 'fiscal_year', 'revenue', 'net_income', 'revenue_growth', 'profit_margin', 'risk_score', 'volatility', 'eps', 'pe_ratio', 'roe', 'revenue_cagr', 'debt_equity', 'current_ratio', 'ownership', 'beta', 'market_cap', 'dividend_yield', 'free_cash_flow', 'price_to_book', 'red_flags', 'risk_details', 'revenue_segments', 'sentiment', 'sentiment_trend', '_validation', 'eps_confidence', 'eps_status', 'roe_confidence', 'roe_status', 'debt_equity_confidence', 'debt_equity_status', 'profit_margin_confidence', 'profit_margin_status']
+[1768372509.5999947] Calling OVERVIEW for AAPL
+[1768372510.2910707] OVERVIEW call done. Data: True
+[1768372510.2915323] No data for AAPL in OVERVIEW
+[1768372510.2929409] Promoting metrics with LLM...
+[1768372520.9107783] LLM response received. Length: 2797
+[1768372520.9113677] Calling sentiment_analyzer for AAPL
+[1768372521.8043923] Sentiment analysis complete
+[1768372521.911432] metrics extraction complete. Keys: ['company_name', 'company_description', 'fiscal_year', 'revenue', 'net_income', 'revenue_growth', 'profit_margin', 'risk_score', 'volatility', 'eps', 'pe_ratio', 'roe', 'revenue_cagr', 'debt_equity', 'current_ratio', 'ownership', 'beta', 'market_cap', 'dividend_yield', 'free_cash_flow', 'price_to_book', 'red_flags', 'risk_details', 'revenue_segments', 'sentiment', 'sentiment_trend', '_validation', 'eps_confidence', 'eps_status', 'roe_confidence', 'roe_status', 'debt_equity_confidence', 'debt_equity_status', 'profit_margin_confidence', 'profit_margin_status']
+[1768372643.8030703] Calling OVERVIEW for AAPL
+[1768372644.5496552] OVERVIEW call done. Data: True
+[1768372644.55007] No data for AAPL in OVERVIEW
+[1768372644.5514278] Promoting metrics with LLM...
+[1768372645.8730328] LLM response received. Length: 2696
+[1768372645.874012] Calling sentiment_analyzer for AAPL
+[1768372646.998453] Sentiment analysis complete
+[1768372647.1364188] metrics extraction complete. Keys: ['company_name', 'company_description', 'fiscal_year', 'revenue', 'net_income', 'revenue_growth', 'profit_margin', 'risk_score', 'volatility', 'eps', 'pe_ratio', 'roe', 'revenue_cagr', 'debt_equity', 'current_ratio', 'ownership', 'beta', 'market_cap', 'dividend_yield', 'free_cash_flow', 'price_to_book', 'red_flags', 'risk_details', 'revenue_segments', 'sentiment', 'sentiment_trend', '_validation', 'eps_confidence', 'eps_status', 'roe_confidence', 'roe_status', 'debt_equity_confidence', 'debt_equity_status', 'profit_margin_confidence', 'profit_margin_status']
+[1768372866.841767] Calling OVERVIEW for AAPL
+[1768372867.5609372] OVERVIEW call done. Data: True
+[1768372867.5615027] No data for AAPL in OVERVIEW
+[1768372867.56357] Promoting metrics with LLM...
+[1768372868.9890544] LLM response received. Length: 2696
+[1768372868.9897861] Calling sentiment_analyzer for AAPL
+[1768372869.7627392] Sentiment analysis complete
+[1768372869.8795736] metrics extraction complete. Keys: ['company_name', 'company_description', 'fiscal_year', 'revenue', 'net_income', 'revenue_growth', 'profit_margin', 'risk_score', 'volatility', 'eps', 'pe_ratio', 'roe', 'revenue_cagr', 'debt_equity', 'current_ratio', 'ownership', 'beta', 'market_cap', 'dividend_yield', 'free_cash_flow', 'price_to_book', 'red_flags', 'risk_details', 'revenue_segments', 'sentiment', 'sentiment_trend', '_validation', 'eps_confidence', 'eps_status', 'roe_confidence', 'roe_status', 'debt_equity_confidence', 'debt_equity_status', 'profit_margin_confidence', 'profit_margin_status']
+[1768373535.6341965] Calling OVERVIEW for AAPL
+[1768373536.9920158] OVERVIEW call done. Data: True
+[1768373540.6129358] Calling CASH_FLOW (1s sleep first)
+[1768373543.4474008] CASH_FLOW done. Data: True
+[1768373543.4528275] Promoting metrics with LLM...
+[1768373544.806827] LLM response received. Length: 2685
+[1768373544.807976] Calling sentiment_analyzer for AAPL
+[1768373546.1783686] Sentiment analysis complete
+[1768373546.4050963] metrics extraction complete. Keys: ['company_name', 'company_description', 'fiscal_year', 'revenue', 'net_income', 'revenue_growth', 'profit_margin', 'risk_score', 'volatility', 'eps', 'pe_ratio', 'roe', 'revenue_cagr', 'debt_equity', 'current_ratio', 'ownership', 'beta', 'market_cap', 'dividend_yield', 'free_cash_flow', 'price_to_book', 'red_flags', 'risk_details', 'revenue_segments', 'ticker', 'ticker_status', 'ticker_confidence', 'eps_status', 'eps_confidence', 'pe_ratio_status', 'pe_ratio_confidence', 'roe_status', 'roe_confidence', 'revenue_cagr_status', 'revenue_cagr_confidence', 'revenue_growth_status', 'revenue_growth_confidence', 'profit_margin_status', 'profit_margin_confidence', 'market_cap_status', 'market_cap_confidence', 'dividend_yield_status', 'dividend_yield_confidence', 'debt_equity_status', 'debt_equity_confidence', 'beta_status', 'beta_confidence', 'ownership_status', 'ownership_confidence', 'free_cash_flow_status', 'free_cash_flow_confidence', 'price_to_book_status', 'price_to_book_confidence', 'liquidity_risk', 'liquidity_risk_status', 'liquidity_risk_confidence', 'market_risk', 'market_risk_status', 'market_risk_confidence', 'credit_risk', 'credit_risk_status', 'credit_risk_confidence', 'governance_risk', 'governance_risk_status', 'governance_risk_confidence', 'history', 'history_status', 'history_confidence', 'sentiment', 'sentiment_trend', '_validation']
+[1768373796.8027046] Calling OVERVIEW for IBM
+[1768373797.6424012] OVERVIEW call done. Data: True
+[1768373797.6429007] No data for IBM in OVERVIEW
+[1768373797.644899] Promoting metrics with LLM...
+[1768373812.5064218] LLM response received. Length: 2476
+[1768373812.5071118] Calling sentiment_analyzer for IBM
+[1768373813.830374] Sentiment analysis complete
+[1768373813.9404142] metrics extraction complete. Keys: ['company_name', 'company_description', 'fiscal_year', 'revenue', 'net_income', 'revenue_growth', 'profit_margin', 'risk_score', 'volatility', 'eps', 'pe_ratio', 'roe', 'revenue_cagr', 'debt_equity', 'current_ratio', 'ownership', 'beta', 'market_cap', 'dividend_yield', 'free_cash_flow', 'price_to_book', 'red_flags', 'risk_details', 'revenue_segments', 'sentiment', 'sentiment_trend', '_validation', 'eps_confidence', 'eps_status', 'roe_confidence', 'roe_status', 'debt_equity_confidence', 'debt_equity_status', 'profit_margin_confidence', 'profit_margin_status']
+[1768374359.150439] Calling OVERVIEW for AAPL
+[1768374360.7138724] OVERVIEW call done. Data: True
+[1768374364.8751776] Calling CASH_FLOW (1s sleep first)
+[1768374367.8734434] CASH_FLOW done. Data: True
+[1768374367.8787944] Promoting metrics with LLM...
+[1768374369.216665] LLM response received. Length: 2656
+[1768374369.218104] Calling sentiment_analyzer for AAPL
+[1768374370.8199267] Sentiment analysis complete
+[1768374371.0735838] metrics extraction complete. Keys: ['company_name', 'company_description', 'fiscal_year', 'revenue', 'net_income', 'revenue_growth', 'profit_margin', 'risk_score', 'volatility', 'eps', 'pe_ratio', 'roe', 'revenue_cagr', 'debt_equity', 'current_ratio', 'ownership', 'beta', 'market_cap', 'dividend_yield', 'free_cash_flow', 'price_to_book', 'red_flags', 'risk_details', 'revenue_segments', 'ticker', 'ticker_status', 'ticker_confidence', 'eps_status', 'eps_confidence', 'pe_ratio_status', 'pe_ratio_confidence', 'roe_status', 'roe_confidence', 'revenue_cagr_status', 'revenue_cagr_confidence', 'revenue_growth_status', 'revenue_growth_confidence', 'revenue_growth_trend', 'revenue_growth_trend_status', 'revenue_growth_trend_confidence', 'profit_margin_status', 'profit_margin_confidence', 'profit_trend', 'profit_trend_status', 'profit_trend_confidence', 'market_cap_status', 'market_cap_confidence', 'dividend_yield_status', 'dividend_yield_confidence', 'debt_equity_status', 'debt_equity_confidence', 'beta_status', 'beta_confidence', 'ownership_status', 'ownership_confidence', 'free_cash_flow_status', 'free_cash_flow_confidence', 'price_to_book_status', 'price_to_book_confidence', 'liquidity_risk', 'liquidity_risk_status', 'liquidity_risk_confidence', 'market_risk', 'market_risk_status', 'market_risk_confidence', 'credit_risk', 'credit_risk_status', 'credit_risk_confidence', 'governance_risk', 'governance_risk_status', 'governance_risk_confidence', 'history', 'history_status', 'history_confidence', 'sentiment', 'sentiment_trend', '_validation']
+[1768497092.8661106] Calling OVERVIEW for IBM
+[1768497094.060438] OVERVIEW call done. Data: True
+[1768497096.4679499] Calling CASH_FLOW (1s sleep first)
+[1768497098.838413] CASH_FLOW done. Data: True
+[1768497098.8407497] Promoting metrics with LLM...
+[1768497110.4615848] LLM response received. Length: 2442
+[1768497110.4622538] Calling sentiment_analyzer for IBM
+[1768497111.4396167] Sentiment analysis complete
+[1768497111.519398] metrics extraction complete. Keys: ['company_name', 'company_description', 'fiscal_year', 'revenue', 'net_income', 'revenue_growth', 'profit_margin', 'risk_score', 'volatility', 'eps', 'pe_ratio', 'roe', 'revenue_cagr', 'debt_equity', 'current_ratio', 'ownership', 'beta', 'market_cap', 'dividend_yield', 'free_cash_flow', 'price_to_book', 'red_flags', 'risk_details', 'revenue_segments', 'ticker', 'ticker_status', 'ticker_confidence', 'eps_status', 'eps_confidence', 'pe_ratio_status', 'pe_ratio_confidence', 'roe_status', 'roe_confidence', 'revenue_cagr_status', 'revenue_cagr_confidence', 'revenue_growth_status', 'revenue_growth_confidence', 'revenue_growth_trend', 'revenue_growth_trend_status', 'revenue_growth_trend_confidence', 'profit_margin_status', 'profit_margin_confidence', 'profit_trend', 'profit_trend_status', 'profit_trend_confidence', 'market_cap_status', 'market_cap_confidence', 'dividend_yield_status', 'dividend_yield_confidence', 'debt_equity_status', 'debt_equity_confidence', 'beta_status', 'beta_confidence', 'ownership_status', 'ownership_confidence', 'free_cash_flow_status', 'free_cash_flow_confidence', 'price_to_book_status', 'price_to_book_confidence', 'liquidity_risk', 'liquidity_risk_status', 'liquidity_risk_confidence', 'market_risk', 'market_risk_status', 'market_risk_confidence', 'credit_risk', 'credit_risk_status', 'credit_risk_confidence', 'governance_risk', 'governance_risk_status', 'governance_risk_confidence', 'history', 'history_status', 'history_confidence', 'sentiment', 'sentiment_trend', '_validation']
+[1768497796.8162208] Calling OVERVIEW for IBM
+[1768497797.5153348] OVERVIEW call done. Data: True
+[1768497797.5158014] No data for IBM in OVERVIEW
+[1768497797.5174503] Promoting metrics with LLM...
+[1768497813.4214468] LLM response received. Length: 2476
+[1768497813.4222782] Calling sentiment_analyzer for IBM
+[1768497814.211606] Sentiment analysis complete
+[1768497814.2843845] metrics extraction complete. Keys: ['company_name', 'company_description', 'fiscal_year', 'revenue', 'net_income', 'revenue_growth', 'profit_margin', 'risk_score', 'volatility', 'eps', 'pe_ratio', 'roe', 'revenue_cagr', 'debt_equity', 'current_ratio', 'ownership', 'beta', 'market_cap', 'dividend_yield', 'free_cash_flow', 'price_to_book', 'red_flags', 'risk_details', 'revenue_segments', 'sentiment', 'sentiment_trend', '_validation', 'eps_confidence', 'eps_status', 'roe_confidence', 'roe_status', 'debt_equity_confidence', 'debt_equity_status', 'profit_margin_confidence', 'profit_margin_status']
+[1768497865.8707826] Calling OVERVIEW for IBM
+[1768497866.4980853] OVERVIEW call done. Data: True
+[1768497866.4984925] No data for IBM in OVERVIEW
+[1768497866.4998834] Promoting metrics with LLM...
+[1768497914.1631312] LLM response received. Length: 2476
+[1768497914.1637945] Calling sentiment_analyzer for IBM
+[1768497915.2920218] Sentiment analysis complete
+[1768497915.3890195] metrics extraction complete. Keys: ['company_name', 'company_description', 'fiscal_year', 'revenue', 'net_income', 'revenue_growth', 'profit_margin', 'risk_score', 'volatility', 'eps', 'pe_ratio', 'roe', 'revenue_cagr', 'debt_equity', 'current_ratio', 'ownership', 'beta', 'market_cap', 'dividend_yield', 'free_cash_flow', 'price_to_book', 'red_flags', 'risk_details', 'revenue_segments', 'sentiment', 'sentiment_trend', '_validation', 'eps_confidence', 'eps_status', 'roe_confidence', 'roe_status', 'debt_equity_confidence', 'debt_equity_status', 'profit_margin_confidence', 'profit_margin_status']
+[1768498181.8075445] Calling OVERVIEW for IBM
+[1768498182.5372462] OVERVIEW call done. Data: True
+[1768498182.537677] No data for IBM in OVERVIEW
+[1768498182.5391357] Promoting metrics with LLM...
+[1768498197.0115252] LLM response received. Length: 2476
+[1768498197.0121808] Calling sentiment_analyzer for IBM
+[1768498197.8948963] Sentiment analysis complete
+[1768498197.9651601] metrics extraction complete. Keys: ['company_name', 'company_description', 'fiscal_year', 'revenue', 'net_income', 'revenue_growth', 'profit_margin', 'risk_score', 'volatility', 'eps', 'pe_ratio', 'roe', 'revenue_cagr', 'debt_equity', 'current_ratio', 'ownership', 'beta', 'market_cap', 'dividend_yield', 'free_cash_flow', 'price_to_book', 'red_flags', 'risk_details', 'revenue_segments', 'sentiment', 'sentiment_trend', '_validation', 'eps_confidence', 'eps_status', 'roe_confidence', 'roe_status', 'debt_equity_confidence', 'debt_equity_status', 'profit_margin_confidence', 'profit_margin_status']
+[1768498600.212881] Calling OVERVIEW for IBM
+[1768498601.4746866] OVERVIEW call done. Data: True
+[1768498603.8389156] Calling CASH_FLOW (1s sleep first)
+[1768498606.3690455] CASH_FLOW done. Data: True
+[1768498606.3710747] Promoting metrics with LLM...
+[1768498617.8758204] LLM response received. Length: 2442
+[1768498617.8766356] Calling sentiment_analyzer for IBM
+[1768498619.087955] Sentiment analysis complete
+[1768498619.2296956] metrics extraction complete. Keys: ['company_name', 'company_description', 'fiscal_year', 'revenue', 'net_income', 'revenue_growth', 'profit_margin', 'risk_score', 'volatility', 'eps', 'pe_ratio', 'roe', 'revenue_cagr', 'debt_equity', 'current_ratio', 'ownership', 'beta', 'market_cap', 'dividend_yield', 'free_cash_flow', 'price_to_book', 'red_flags', 'risk_details', 'revenue_segments', 'ticker', 'ticker_status', 'ticker_confidence', 'eps_status', 'eps_confidence', 'pe_ratio_status', 'pe_ratio_confidence', 'roe_status', 'roe_confidence', 'revenue_cagr_status', 'revenue_cagr_confidence', 'revenue_growth_status', 'revenue_growth_confidence', 'revenue_growth_trend', 'revenue_growth_trend_status', 'revenue_growth_trend_confidence', 'profit_margin_status', 'profit_margin_confidence', 'profit_trend', 'profit_trend_status', 'profit_trend_confidence', 'market_cap_status', 'market_cap_confidence', 'dividend_yield_status', 'dividend_yield_confidence', 'debt_equity_status', 'debt_equity_confidence', 'beta_status', 'beta_confidence', 'ownership_status', 'ownership_confidence', 'free_cash_flow_status', 'free_cash_flow_confidence', 'price_to_book_status', 'price_to_book_confidence', 'liquidity_risk', 'liquidity_risk_status', 'liquidity_risk_confidence', 'market_risk', 'market_risk_status', 'market_risk_confidence', 'credit_risk', 'credit_risk_status', 'credit_risk_confidence', 'governance_risk', 'governance_risk_status', 'governance_risk_confidence', 'history', 'history_status', 'history_confidence', 'sentiment', 'sentiment_trend', '_validation']
+[1768498818.8402739] Calling OVERVIEW for IBM
+[1768498819.5709162] OVERVIEW call done. Data: True
+[1768498819.5713146] No data for IBM in OVERVIEW
+[1768498819.5727444] Promoting metrics with LLM...
+[1768498835.276832] LLM response received. Length: 2476
+[1768498835.2778933] Calling sentiment_analyzer for IBM
+[1768498836.2945652] Sentiment analysis complete
+[1768498836.3891253] metrics extraction complete. Keys: ['company_name', 'company_description', 'fiscal_year', 'revenue', 'net_income', 'revenue_growth', 'profit_margin', 'risk_score', 'volatility', 'eps', 'pe_ratio', 'roe', 'revenue_cagr', 'debt_equity', 'current_ratio', 'ownership', 'beta', 'market_cap', 'dividend_yield', 'free_cash_flow', 'price_to_book', 'red_flags', 'risk_details', 'revenue_segments', 'sentiment', 'sentiment_trend', '_validation', 'eps_confidence', 'eps_status', 'roe_confidence', 'roe_status', 'debt_equity_confidence', 'debt_equity_status', 'profit_margin_confidence', 'profit_margin_status']
+[1768499158.599807] Calling OVERVIEW for IBM
+[1768499159.2607977] OVERVIEW call done. Data: True
+[1768499159.2613232] No data for IBM in OVERVIEW
+[1768499159.2637494] Promoting metrics with LLM...
+[1768499174.698312] LLM response received. Length: 2476
+[1768499174.6988835] Calling sentiment_analyzer for IBM
+[1768499175.570925] Sentiment analysis complete
+[1768499175.6635692] metrics extraction complete. Keys: ['company_name', 'company_description', 'fiscal_year', 'revenue', 'net_income', 'revenue_growth', 'profit_margin', 'risk_score', 'volatility', 'eps', 'pe_ratio', 'roe', 'revenue_cagr', 'debt_equity', 'current_ratio', 'ownership', 'beta', 'market_cap', 'dividend_yield', 'free_cash_flow', 'price_to_book', 'red_flags', 'risk_details', 'revenue_segments', 'sentiment', 'sentiment_trend', '_validation', 'eps_confidence', 'eps_status', 'roe_confidence', 'roe_status', 'debt_equity_confidence', 'debt_equity_status', 'profit_margin_confidence', 'profit_margin_status']
+[1768499824.0791125] Calling OVERVIEW for IBM
+[1768499824.9285214] OVERVIEW call done. Data: True
+[1768499824.9291618] No data for IBM in OVERVIEW
+[1768499824.9312243] Promoting metrics with LLM...
+[1768499839.513728] LLM response received. Length: 2476
+[1768499839.5142827] Calling sentiment_analyzer for IBM
+[1768499840.379202] Sentiment analysis complete
+[1768499840.4629273] metrics extraction complete. Keys: ['company_name', 'company_description', 'fiscal_year', 'revenue', 'net_income', 'revenue_growth', 'profit_margin', 'risk_score', 'volatility', 'eps', 'pe_ratio', 'roe', 'revenue_cagr', 'debt_equity', 'current_ratio', 'ownership', 'beta', 'market_cap', 'dividend_yield', 'free_cash_flow', 'price_to_book', 'red_flags', 'risk_details', 'revenue_segments', 'sentiment', 'sentiment_trend', '_validation', 'eps_confidence', 'eps_status', 'roe_confidence', 'roe_status', 'debt_equity_confidence', 'debt_equity_status', 'profit_margin_confidence', 'profit_margin_status']
+[1768499972.506785] Calling OVERVIEW for IBM
+[1768499973.728083] OVERVIEW call done. Data: True
+[1768499977.4221041] Calling CASH_FLOW (1s sleep first)
+[1768499979.8237667] CASH_FLOW done. Data: True
+[1768499979.8259072] Promoting metrics with LLM...
+[1768499992.79611] LLM response received. Length: 2405
+[1768499992.7969048] Calling sentiment_analyzer for IBM
+[1768499993.7154427] Sentiment analysis complete
+[1768499993.8284187] metrics extraction complete. Keys: ['company_name', 'company_description', 'fiscal_year', 'revenue', 'net_income', 'revenue_growth', 'profit_margin', 'risk_score', 'volatility', 'eps', 'pe_ratio', 'roe', 'revenue_cagr', 'debt_equity', 'current_ratio', 'ownership', 'beta', 'market_cap', 'dividend_yield', 'free_cash_flow', 'price_to_book', 'red_flags', 'risk_details', 'revenue_segments', 'ticker', 'ticker_status', 'ticker_confidence', 'eps_status', 'eps_confidence', 'pe_ratio_status', 'pe_ratio_confidence', 'roe_status', 'roe_confidence', 'revenue_cagr_status', 'revenue_cagr_confidence', 'revenue_growth_status', 'revenue_growth_confidence', 'revenue_growth_trend', 'revenue_growth_trend_status', 'revenue_growth_trend_confidence', 'profit_margin_status', 'profit_margin_confidence', 'profit_trend', 'profit_trend_status', 'profit_trend_confidence', 'market_cap_status', 'market_cap_confidence', 'dividend_yield_status', 'dividend_yield_confidence', 'debt_equity_status', 'debt_equity_confidence', 'beta_status', 'beta_confidence', 'ownership_status', 'ownership_confidence', 'free_cash_flow_status', 'free_cash_flow_confidence', 'price_to_book_status', 'price_to_book_confidence', 'liquidity_risk', 'liquidity_risk_status', 'liquidity_risk_confidence', 'market_risk', 'market_risk_status', 'market_risk_confidence', 'credit_risk', 'credit_risk_status', 'credit_risk_confidence', 'governance_risk', 'governance_risk_status', 'governance_risk_confidence', 'history', 'history_status', 'history_confidence', 'sentiment', 'sentiment_trend', '_validation']
+[1768571027.5762527] Calling OVERVIEW for IBM
+[1768571028.2318513] OVERVIEW call done. Data: True
+[1768571028.232252] No data for IBM in OVERVIEW
+[1768571028.2336888] Promoting metrics with LLM...
+[1768571043.7786407] LLM response received. Length: 2476
+[1768571043.7794101] Calling sentiment_analyzer for IBM
+[1768571044.7824233] Sentiment analysis complete
+[1768571044.8884225] metrics extraction complete. Keys: ['company_name', 'company_description', 'fiscal_year', 'revenue', 'net_income', 'revenue_growth', 'profit_margin', 'risk_score', 'volatility', 'eps', 'pe_ratio', 'roe', 'revenue_cagr', 'debt_equity', 'current_ratio', 'ownership', 'beta', 'market_cap', 'dividend_yield', 'free_cash_flow', 'price_to_book', 'red_flags', 'risk_details', 'revenue_segments', 'sentiment', 'sentiment_trend', '_validation', 'eps_confidence', 'eps_status', 'roe_confidence', 'roe_status', 'debt_equity_confidence', 'debt_equity_status', 'profit_margin_confidence', 'profit_margin_status']
+[1768571476.9889417] Calling OVERVIEW for IBM
+[1768571477.7004454] OVERVIEW call done. Data: True
+[1768571477.7009182] OVERVIEW check failed for IBM: Thank you for using Alpha Vantage! Please consider spreading out your free API requests more sparingly (1 request per second). You may subscribe to any of the premium plans at https://www.alphavantage.co/premium/ to lift the free key rate limit (25 requests per day), raise the per-second burst limit, and instantly unlock all premium endpoints
+[1768571477.7024589] Promoting metrics with LLM...
+[1768571493.3048394] LLM response received. Length: 2476
+[1768571493.3054366] Calling sentiment_analyzer for IBM
+[1768571494.285461] Sentiment analysis complete
+[1768571494.3806841] metrics extraction complete. Keys: ['company_name', 'company_description', 'fiscal_year', 'revenue', 'net_income', 'revenue_growth', 'profit_margin', 'risk_score', 'volatility', 'eps', 'pe_ratio', 'roe', 'revenue_cagr', 'debt_equity', 'current_ratio', 'ownership', 'beta', 'market_cap', 'dividend_yield', 'free_cash_flow', 'price_to_book', 'red_flags', 'risk_details', 'revenue_segments', 'sentiment', 'sentiment_trend', '_validation', 'eps_confidence', 'eps_status', 'roe_confidence', 'roe_status', 'debt_equity_confidence', 'debt_equity_status', 'profit_margin_confidence', 'profit_margin_status']
+[1768571825.0826845] Calling OVERVIEW for IBM
+[1768571825.7557416] OVERVIEW call done. Data: True
+[1768571825.756213] OVERVIEW check failed for IBM: Thank you for using Alpha Vantage! Please consider spreading out your free API requests more sparingly (1 request per second). You may subscribe to any of the premium plans at https://www.alphavantage.co/premium/ to lift the free key rate limit (25 requests per day), raise the per-second burst limit, and instantly unlock all premium endpoints
+[1768571825.757628] Promoting metrics with LLM...
+[1768571841.2588673] LLM response received. Length: 2476
+[1768571841.2596004] Calling sentiment_analyzer for IBM
+[1768571842.1894898] Sentiment analysis complete
+[1768571842.4383018] metrics extraction complete. Keys: ['company_name', 'company_description', 'fiscal_year', 'revenue', 'net_income', 'revenue_growth', 'profit_margin', 'risk_score', 'volatility', 'eps', 'pe_ratio', 'roe', 'revenue_cagr', 'debt_equity', 'current_ratio', 'ownership', 'beta', 'market_cap', 'dividend_yield', 'free_cash_flow', 'price_to_book', 'red_flags', 'risk_details', 'revenue_segments', 'sentiment', 'sentiment_trend', '_validation', 'eps_confidence', 'eps_status', 'roe_confidence', 'roe_status', 'debt_equity_confidence', 'debt_equity_status', 'profit_margin_confidence', 'profit_margin_status', 'market_cap_confidence', 'market_cap_status', 'pe_ratio_confidence', 'pe_ratio_status']
+[1768572176.4320202] Calling OVERVIEW for IBM
+[1768572177.2435038] OVERVIEW call done. Data: True
+[1768572177.244105] OVERVIEW check failed for IBM: Thank you for using Alpha Vantage! Please consider spreading out your free API requests more sparingly (1 request per second). You may subscribe to any of the premium plans at https://www.alphavantage.co/premium/ to lift the free key rate limit (25 requests per day), raise the per-second burst limit, and instantly unlock all premium endpoints
+[1768572177.2470927] Promoting metrics with LLM...
+[1768572191.898664] LLM response received. Length: 2379
+[1768572191.8992944] Calling sentiment_analyzer for IBM
+[1768572192.7902749] Sentiment analysis complete
+[1768572192.9514725] metrics extraction complete. Keys: ['company_name', 'company_description', 'fiscal_year', 'revenue', 'net_income', 'revenue_growth', 'profit_margin', 'risk_score', 'volatility', 'eps', 'pe_ratio', 'roe', 'revenue_cagr', 'debt_equity', 'current_ratio', 'ownership', 'beta', 'market_cap', 'dividend_yield', 'free_cash_flow', 'price_to_book', 'red_flags', 'risk_details', 'revenue_segments', 'sentiment', 'sentiment_trend', '_validation', 'eps_confidence', 'eps_status', 'roe_confidence', 'roe_status', 'debt_equity_confidence', 'debt_equity_status', 'profit_margin_confidence', 'profit_margin_status', 'market_cap_confidence', 'market_cap_status', 'pe_ratio_confidence', 'pe_ratio_status']
+[1768572399.9433117] Calling OVERVIEW for IBM
+[1768572400.929987] OVERVIEW call done. Data: True
+[1768572400.930551] OVERVIEW check failed for IBM: Thank you for using Alpha Vantage! Please consider spreading out your free API requests more sparingly (1 request per second). You may subscribe to any of the premium plans at https://www.alphavantage.co/premium/ to lift the free key rate limit (25 requests per day), raise the per-second burst limit, and instantly unlock all premium endpoints
+[1768572400.9324076] Promoting metrics with LLM...
+[1768572415.535496] LLM response received. Length: 2476
+[1768572415.536154] Calling sentiment_analyzer for IBM
+[1768572416.5402422] Sentiment analysis complete
+[1768572416.7508774] metrics extraction complete. Keys: ['company_name', 'company_description', 'fiscal_year', 'revenue', 'net_income', 'revenue_growth', 'profit_margin', 'risk_score', 'volatility', 'eps', 'pe_ratio', 'roe', 'revenue_cagr', 'debt_equity', 'current_ratio', 'ownership', 'beta', 'market_cap', 'dividend_yield', 'free_cash_flow', 'price_to_book', 'red_flags', 'risk_details', 'revenue_segments', 'sentiment', 'sentiment_trend', '_validation', 'eps_confidence', 'eps_status', 'roe_confidence', 'roe_status', 'debt_equity_confidence', 'debt_equity_status', 'profit_margin_confidence', 'profit_margin_status', 'market_cap_confidence', 'market_cap_status', 'pe_ratio_confidence', 'pe_ratio_status']
+[1768572689.8427458] Calling OVERVIEW for IBM
+[1768572690.8302832] OVERVIEW call done. Data: True
+[1768572690.8309274] Calling INCOME_STATEMENT (1.5s sleep first)
+[1768572693.6809757] Calling BALANCE_SHEET (1.5s sleep first)
+[1768572696.6145246] Calling CASH_FLOW (1.5s sleep first)
+[1768572699.803314] CASH_FLOW done. Data: True
+[1768572699.80744] Promoting metrics with LLM...
+[1768573281.1374214] Calling OVERVIEW for IBM
+[1768573283.155067] OVERVIEW call done. Data: True
+[1768573283.1570826] Calling INCOME_STATEMENT (1.5s sleep first)
+[1768573287.1456032] Calling BALANCE_SHEET (1.5s sleep first)
+[1768573291.704732] Calling CASH_FLOW (1.5s sleep first)
+[1768573294.752335] CASH_FLOW done. Data: True
+[1768573297.4353476] Risk AI response: ```json
+{
+    "risk_score": 5.5,
+    "red_flags": ["High Debt", "Declining Margins"],
+    "profit_trend": "positive",
+    "risk_details": {
+        "liquidity": {
+            "score": 40,
+            "factors": [
+                "Low cash",
+                "High debt-to-equity ratio (2.29)",
+                "Potential burn rate issues"
+            ],
+            "alarming_details": "Potential insolvency if burn rate continues.",
+            "industry_avg": 30
+        },
+        "market": {
+     
+[1768573297.4361255] Risk details normalized. Keys: ['liquidity', 'market', 'credit', 'governance']
+[1768574159.930359] Calling OVERVIEW for AAPL
+[1768574161.240686] OVERVIEW call done. Data: True
+[1768574161.241545] Calling INCOME_STATEMENT (1.5s sleep first)
+[1768574164.1006734] INCOME_STATEMENT rate limited
+[1768574164.101471] Calling BALANCE_SHEET (1.5s sleep first)
+[1768574166.900164] BALANCE_SHEET rate limited
+[1768574166.9006586] Calling CASH_FLOW (1.5s sleep first)
+[1768574169.3254075] CASH_FLOW done. Data: True
+[1768574169.326148] CASH_FLOW rate limited
+[1768574169.3292723] Promoting metrics with LLM...
+[1768574171.3298297] LLM response received. Length: 2722
+[1768574171.330521] Calling sentiment_analyzer for AAPL
+[1768574172.2653866] Sentiment analysis complete
+[1768574172.424346] metrics extraction complete. Keys: ['company_name', 'company_description', 'fiscal_year', 'revenue', 'net_income', 'revenue_growth', 'profit_margin', 'risk_score', 'volatility', 'eps', 'pe_ratio', 'roe', 'revenue_cagr', 'debt_equity', 'current_ratio', 'ownership', 'beta', 'market_cap', 'dividend_yield', 'free_cash_flow', 'price_to_book', 'red_flags', 'risk_details', 'revenue_segments', 'ticker', 'ticker_status', 'ticker_confidence', 'eps_status', 'eps_confidence', 'pe_ratio_status', 'pe_ratio_confidence', 'roe_status', 'roe_confidence', 'revenue_cagr_status', 'revenue_cagr_confidence', 'revenue_growth_status', 'revenue_growth_confidence', 'revenue_growth_trend', 'revenue_growth_trend_status', 'revenue_growth_trend_confidence', 'profit_margin_status', 'profit_margin_confidence', 'profit_trend', 'profit_trend_status', 'profit_trend_confidence', 'market_cap_status', 'market_cap_confidence', 'dividend_yield_status', 'dividend_yield_confidence', 'debt_equity_status', 'debt_equity_confidence', 'beta_status', 'beta_confidence', 'ownership_status', 'ownership_confidence', 'price_to_book_status', 'price_to_book_confidence', 'liquidity_risk', 'liquidity_risk_status', 'liquidity_risk_confidence', 'market_risk', 'market_risk_status', 'market_risk_confidence', 'credit_risk', 'credit_risk_status', 'credit_risk_confidence', 'governance_risk', 'governance_risk_status', 'governance_risk_confidence', 'history', 'history_status', 'history_confidence', 'raw_overview', 'raw_overview_status', 'raw_overview_confidence', 'sentiment', 'sentiment_trend', 'sector_benchmarks', '_validation']
+[1768574228.3916702] Calling OVERVIEW for IBM
+[1768574229.361844] OVERVIEW call done. Data: True
+[1768574229.3626132] OVERVIEW check failed for IBM: Thank you for using Alpha Vantage! Please consider spreading out your free API requests more sparingly (1 request per second). You may subscribe to any of the premium plans at https://www.alphavantage.co/premium/ to lift the free key rate limit (25 requests per day), raise the per-second burst limit, and instantly unlock all premium endpoints
+[1768574229.3660445] Promoting metrics with LLM...
+[1768574266.01879] LLM response received. Length: 2476
+[1768574266.0197] Calling sentiment_analyzer for IBM
+[1768574267.2347584] Sentiment analysis complete
+[1768574267.4821289] metrics extraction complete. Keys: ['company_name', 'company_description', 'fiscal_year', 'revenue', 'net_income', 'revenue_growth', 'profit_margin', 'risk_score', 'volatility', 'eps', 'pe_ratio', 'roe', 'revenue_cagr', 'debt_equity', 'current_ratio', 'ownership', 'beta', 'market_cap', 'dividend_yield', 'free_cash_flow', 'price_to_book', 'red_flags', 'risk_details', 'revenue_segments', 'sentiment', 'sentiment_trend', 'liquidity_risk', 'market_risk', 'credit_risk', 'governance_risk', 'sector_benchmarks', '_validation', 'eps_confidence', 'eps_status', 'roe_confidence', 'roe_status', 'debt_equity_confidence', 'debt_equity_status', 'profit_margin_confidence', 'profit_margin_status', 'market_cap_confidence', 'market_cap_status', 'pe_ratio_confidence', 'pe_ratio_status']
+[1768574467.502021] Calling OVERVIEW for IBM
+[1768574469.0337467] OVERVIEW call done. Data: True
+[1768574469.0346012] OVERVIEW check failed for IBM: We have detected your API key as 2UF272OMWYPCZCSP and our standard API rate limit is 25 requests per day. Please subscribe to any of the premium plans at https://www.alphavantage.co/premium/ to instantly remove all daily rate limits.
+[1768574469.0377715] Promoting metrics with LLM...
+[1768574480.5419722] LLM response received. Length: 2476
+[1768574480.5431902] Calling sentiment_analyzer for IBM
+[1768574482.5166068] Sentiment analysis complete
+[1768574482.9315407] metrics extraction complete. Keys: ['company_name', 'company_description', 'fiscal_year', 'revenue', 'net_income', 'revenue_growth', 'profit_margin', 'risk_score', 'volatility', 'eps', 'pe_ratio', 'roe', 'revenue_cagr', 'debt_equity', 'current_ratio', 'ownership', 'beta', 'market_cap', 'dividend_yield', 'free_cash_flow', 'price_to_book', 'red_flags', 'risk_details', 'revenue_segments', 'sentiment', 'sentiment_trend', 'liquidity_risk', 'market_risk', 'credit_risk', 'governance_risk', 'sector_benchmarks', '_validation', 'eps_confidence', 'eps_status', 'roe_confidence', 'roe_status', 'debt_equity_confidence', 'debt_equity_status', 'profit_margin_confidence', 'profit_margin_status', 'market_cap_confidence', 'market_cap_status', 'pe_ratio_confidence', 'pe_ratio_status']
+[1768574673.176701] Calling OVERVIEW for AAPL
+[1768574673.9778335] OVERVIEW call done. Data: True
+[1768574673.9783468] OVERVIEW check failed for AAPL: We have detected your API key as 2UF272OMWYPCZCSP and our standard API rate limit is 25 requests per day. Please subscribe to any of the premium plans at https://www.alphavantage.co/premium/ to instantly remove all daily rate limits.
+[1768574673.9806194] Promoting metrics with LLM...
+[1768574675.3909807] LLM response received. Length: 2797
+[1768574675.3916183] Calling sentiment_analyzer for AAPL
+[1768574676.256042] Sentiment analysis complete
+[1768574676.42057] metrics extraction complete. Keys: ['company_name', 'company_description', 'fiscal_year', 'revenue', 'net_income', 'revenue_growth', 'profit_margin', 'risk_score', 'volatility', 'eps', 'pe_ratio', 'roe', 'revenue_cagr', 'debt_equity', 'current_ratio', 'ownership', 'beta', 'market_cap', 'dividend_yield', 'free_cash_flow', 'price_to_book', 'red_flags', 'risk_details', 'revenue_segments', 'sentiment', 'sentiment_trend', 'liquidity_risk', 'market_risk', 'credit_risk', 'governance_risk', 'sector_benchmarks', '_validation', 'eps_confidence', 'eps_status', 'roe_confidence', 'roe_status', 'debt_equity_confidence', 'debt_equity_status', 'profit_margin_confidence', 'profit_margin_status', 'market_cap_confidence', 'market_cap_status', 'pe_ratio_confidence', 'pe_ratio_status']
+[1768574965.2136445] Calling OVERVIEW for AAPL
+[1768574966.1111777] OVERVIEW call done. Data: True
+[1768574966.1116073] OVERVIEW check failed for AAPL: Thank you for using Alpha Vantage! Please consider spreading out your free API requests more sparingly (1 request per second). You may subscribe to any of the premium plans at https://www.alphavantage.co/premium/ to lift the free key rate limit (25 requests per day), raise the per-second burst limit, and instantly unlock all premium endpoints
+[1768574966.1132] Promoting metrics with LLM...
+[1768574967.4426885] LLM response received. Length: 2797
+[1768574967.4433322] Calling sentiment_analyzer for AAPL
+[1768574968.3483562] Sentiment analysis complete
+[1768574968.4777868] metrics extraction complete. Keys: ['company_name', 'company_description', 'fiscal_year', 'revenue', 'net_income', 'revenue_growth', 'profit_margin', 'risk_score', 'volatility', 'eps', 'pe_ratio', 'roe', 'revenue_cagr', 'debt_equity', 'current_ratio', 'ownership', 'beta', 'market_cap', 'dividend_yield', 'free_cash_flow', 'price_to_book', 'red_flags', 'risk_details', 'revenue_segments', 'sentiment', 'sentiment_trend', 'liquidity_risk', 'market_risk', 'credit_risk', 'governance_risk', 'sector_benchmarks', '_validation', 'eps_confidence', 'eps_status', 'roe_confidence', 'roe_status', 'debt_equity_confidence', 'debt_equity_status', 'profit_margin_confidence', 'profit_margin_status', 'market_cap_confidence', 'market_cap_status', 'pe_ratio_confidence', 'pe_ratio_status']
+[1768575218.2954538] Calling OVERVIEW for IBM
+[1768575220.4683979] OVERVIEW call done. Data: True
+[1768575220.4694972] OVERVIEW check failed for IBM: We have detected your API key as 2UF272OMWYPCZCSP and our standard API rate limit is 25 requests per day. Please subscribe to any of the premium plans at https://www.alphavantage.co/premium/ to instantly remove all daily rate limits.
+[1768575220.474591] Promoting metrics with LLM...
+[1768575231.1707933] LLM response received. Length: 2476
+[1768575231.173419] Calling sentiment_analyzer for IBM
+[1768575233.4355686] Sentiment analysis complete
+[1768575233.8881433] metrics extraction complete. Keys: ['company_name', 'company_description', 'fiscal_year', 'revenue', 'net_income', 'revenue_growth', 'profit_margin', 'risk_score', 'volatility', 'eps', 'pe_ratio', 'roe', 'revenue_cagr', 'debt_equity', 'current_ratio', 'ownership', 'beta', 'market_cap', 'dividend_yield', 'free_cash_flow', 'price_to_book', 'red_flags', 'risk_details', 'revenue_segments', 'sentiment', 'sentiment_trend', 'liquidity_risk', 'market_risk', 'credit_risk', 'governance_risk', 'sector_benchmarks', '_validation', 'eps_confidence', 'eps_status', 'roe_confidence', 'roe_status', 'debt_equity_confidence', 'debt_equity_status', 'profit_margin_confidence', 'profit_margin_status', 'market_cap_confidence', 'market_cap_status', 'pe_ratio_confidence', 'pe_ratio_status']
+[1768575665.2381985] Calling OVERVIEW for IBM
+[1768575668.0054424] OVERVIEW call done. Data: True
+[1768575668.0065334] OVERVIEW check failed for IBM: We have detected your API key as 2UF272OMWYPCZCSP and our standard API rate limit is 25 requests per day. Please subscribe to any of the premium plans at https://www.alphavantage.co/premium/ to instantly remove all daily rate limits.
+[1768575668.0120718] Promoting metrics with LLM...
+[1768575677.753001] LLM response received. Length: 2379
+[1768575677.7547693] Calling sentiment_analyzer for IBM
+[1768575680.2724004] Sentiment analysis complete
+[1768575680.7442286] metrics extraction complete. Keys: ['company_name', 'company_description', 'fiscal_year', 'revenue', 'net_income', 'revenue_growth', 'profit_margin', 'risk_score', 'volatility', 'eps', 'pe_ratio', 'roe', 'revenue_cagr', 'debt_equity', 'current_ratio', 'ownership', 'beta', 'market_cap', 'dividend_yield', 'free_cash_flow', 'price_to_book', 'red_flags', 'risk_details', 'revenue_segments', 'sentiment', 'sentiment_trend', 'liquidity_risk', 'market_risk', 'credit_risk', 'governance_risk', 'sector_benchmarks', '_validation', 'eps_confidence', 'eps_status', 'roe_confidence', 'roe_status', 'debt_equity_confidence', 'debt_equity_status', 'profit_margin_confidence', 'profit_margin_status', 'market_cap_confidence', 'market_cap_status', 'pe_ratio_confidence', 'pe_ratio_status']
+[1768576319.4434075] Calling OVERVIEW for AAPL
+[1768576320.2797532] OVERVIEW call done. Data: True
+[1768576320.2802298] OVERVIEW check failed for AAPL: We have detected your API key as 2UF272OMWYPCZCSP and our standard API rate limit is 25 requests per day. Please subscribe to any of the premium plans at https://www.alphavantage.co/premium/ to instantly remove all daily rate limits.
+[1768576320.2818348] Promoting metrics with LLM...
+[1768576321.6593738] LLM response received. Length: 2797
+[1768576321.66054] Calling sentiment_analyzer for AAPL
+[1768576322.9689267] Sentiment analysis complete
+[1768576323.137143] metrics extraction complete. Keys: ['company_name', 'company_description', 'fiscal_year', 'revenue', 'net_income', 'revenue_growth', 'profit_margin', 'risk_score', 'volatility', 'eps', 'pe_ratio', 'roe', 'revenue_cagr', 'debt_equity', 'current_ratio', 'ownership', 'beta', 'market_cap', 'dividend_yield', 'free_cash_flow', 'price_to_book', 'red_flags', 'risk_details', 'revenue_segments', 'sentiment', 'sentiment_trend', 'liquidity_risk', 'market_risk', 'credit_risk', 'governance_risk', 'sector_benchmarks', '_validation', 'eps_confidence', 'eps_status', 'roe_confidence', 'roe_status', 'debt_equity_confidence', 'debt_equity_status', 'profit_margin_confidence', 'profit_margin_status', 'market_cap_confidence', 'market_cap_status', 'pe_ratio_confidence', 'pe_ratio_status']
+[1768576702.974859] Calling OVERVIEW for AAPL
+[1768576703.8491008] OVERVIEW call done. Data: True
+[1768576703.849651] OVERVIEW check failed for AAPL: We have detected your API key as 2UF272OMWYPCZCSP and our standard API rate limit is 25 requests per day. Please subscribe to any of the premium plans at https://www.alphavantage.co/premium/ to instantly remove all daily rate limits.
+[1768576703.8511598] Promoting metrics with LLM...
+[1768576705.1459274] LLM response received. Length: 2797
+[1768576705.1474304] Calling sentiment_analyzer for AAPL
+[1768576706.1346033] Sentiment analysis complete
+[1768576706.3581655] metrics extraction complete. Keys: ['company_name', 'company_description', 'fiscal_year', 'revenue', 'net_income', 'revenue_growth', 'profit_margin', 'risk_score', 'volatility', 'eps', 'pe_ratio', 'roe', 'revenue_cagr', 'debt_equity', 'current_ratio', 'ownership', 'beta', 'market_cap', 'dividend_yield', 'free_cash_flow', 'price_to_book', 'red_flags', 'risk_details', 'revenue_segments', 'sentiment', 'sentiment_trend', 'liquidity_risk', 'market_risk', 'credit_risk', 'governance_risk', 'sector_benchmarks', '_validation', 'eps_confidence', 'eps_status', 'roe_confidence', 'roe_status', 'debt_equity_confidence', 'debt_equity_status', 'profit_margin_confidence', 'profit_margin_status', 'market_cap_confidence', 'market_cap_status', 'pe_ratio_confidence', 'pe_ratio_status']
+[1768576857.0041785] Calling OVERVIEW for AAPL
+[1768576857.731591] OVERVIEW call done. Data: True
+[1768576857.7321267] OVERVIEW check failed for AAPL: We have detected your API key as 2UF272OMWYPCZCSP and our standard API rate limit is 25 requests per day. Please subscribe to any of the premium plans at https://www.alphavantage.co/premium/ to instantly remove all daily rate limits.
+[1768576857.7339442] Promoting metrics with LLM...
+[1768576859.2210972] LLM response received. Length: 2696
+[1768576859.2217221] Calling sentiment_analyzer for AAPL
+[1768576860.4139915] Sentiment analysis complete
+[1768576860.5506856] metrics extraction complete. Keys: ['company_name', 'company_description', 'fiscal_year', 'revenue', 'net_income', 'revenue_growth', 'profit_margin', 'risk_score', 'volatility', 'eps', 'pe_ratio', 'roe', 'revenue_cagr', 'debt_equity', 'current_ratio', 'ownership', 'beta', 'market_cap', 'dividend_yield', 'free_cash_flow', 'price_to_book', 'red_flags', 'risk_details', 'revenue_segments', 'sentiment', 'sentiment_trend', 'liquidity_risk', 'market_risk', 'credit_risk', 'governance_risk', 'sector_benchmarks', '_validation', 'eps_confidence', 'eps_status', 'roe_confidence', 'roe_status', 'debt_equity_confidence', 'debt_equity_status', 'profit_margin_confidence', 'profit_margin_status', 'market_cap_confidence', 'market_cap_status', 'pe_ratio_confidence', 'pe_ratio_status']
+[1768577267.5020642] Calling OVERVIEW for AAPL
+[1768577268.174546] OVERVIEW call done. Data: True
+[1768577268.1750462] OVERVIEW check failed for AAPL: We have detected your API key as 2UF272OMWYPCZCSP and our standard API rate limit is 25 requests per day. Please subscribe to any of the premium plans at https://www.alphavantage.co/premium/ to instantly remove all daily rate limits.
+[1768577268.1766071] Promoting metrics with LLM...
+[1768577269.6029437] LLM response received. Length: 2696
+[1768577269.6038258] Calling sentiment_analyzer for AAPL
+[1768577270.6833947] Sentiment analysis complete
+[1768577270.8054214] metrics extraction complete. Keys: ['company_name', 'company_description', 'fiscal_year', 'revenue', 'net_income', 'revenue_growth', 'profit_margin', 'risk_score', 'volatility', 'eps', 'pe_ratio', 'roe', 'revenue_cagr', 'debt_equity', 'current_ratio', 'ownership', 'beta', 'market_cap', 'dividend_yield', 'free_cash_flow', 'price_to_book', 'red_flags', 'risk_details', 'revenue_segments', 'sentiment', 'sentiment_trend', 'liquidity_risk', 'market_risk', 'credit_risk', 'governance_risk', 'sector_benchmarks', '_validation', 'eps_confidence', 'eps_status', 'roe_confidence', 'roe_status', 'debt_equity_confidence', 'debt_equity_status', 'profit_margin_confidence', 'profit_margin_status', 'market_cap_confidence', 'market_cap_status', 'pe_ratio_confidence', 'pe_ratio_status']
+[1768577966.5966291] Calling OVERVIEW for AAPL
+[1768577967.412019] OVERVIEW call done. Data: True
+[1768577967.4125335] OVERVIEW check failed for AAPL: We have detected your API key as 2UF272OMWYPCZCSP and our standard API rate limit is 25 requests per day. Please subscribe to any of the premium plans at https://www.alphavantage.co/premium/ to instantly remove all daily rate limits.
+[1768577967.4141414] Promoting metrics with LLM...
+[1768577968.7211347] LLM response received. Length: 2696
+[1768577968.7217312] Calling sentiment_analyzer for AAPL
+[1768577970.17024] Sentiment analysis complete
+[1768577970.328305] metrics extraction complete. Keys: ['company_name', 'company_description', 'fiscal_year', 'revenue', 'net_income', 'revenue_growth', 'profit_margin', 'risk_score', 'volatility', 'eps', 'pe_ratio', 'roe', 'revenue_cagr', 'debt_equity', 'current_ratio', 'ownership', 'beta', 'market_cap', 'dividend_yield', 'free_cash_flow', 'price_to_book', 'red_flags', 'risk_details', 'revenue_segments', 'sentiment', 'sentiment_trend', 'liquidity_risk', 'market_risk', 'credit_risk', 'governance_risk', 'sector_benchmarks', '_validation', 'eps_confidence', 'eps_status', 'roe_confidence', 'roe_status', 'debt_equity_confidence', 'debt_equity_status', 'profit_margin_confidence', 'profit_margin_status', 'market_cap_confidence', 'market_cap_status', 'pe_ratio_confidence', 'pe_ratio_status']
+[1768578756.4616308] Calling OVERVIEW for AAPL
+[1768578757.222595] OVERVIEW call done. Data: True
+[1768578757.2230392] OVERVIEW check failed for AAPL: We have detected your API key as 2UF272OMWYPCZCSP and our standard API rate limit is 25 requests per day. Please subscribe to any of the premium plans at https://www.alphavantage.co/premium/ to instantly remove all daily rate limits.
+[1768578757.2254632] Promoting metrics with LLM...
+[1768578758.5424333] LLM response received. Length: 2797
+[1768578758.5430543] Calling sentiment_analyzer for AAPL
+[1768578759.351535] Sentiment analysis complete
+[1768578759.4873102] metrics extraction complete. Keys: ['company_name', 'company_description', 'fiscal_year', 'revenue', 'net_income', 'revenue_growth', 'profit_margin', 'risk_score', 'volatility', 'eps', 'pe_ratio', 'roe', 'revenue_cagr', 'debt_equity', 'current_ratio', 'ownership', 'beta', 'market_cap', 'dividend_yield', 'free_cash_flow', 'price_to_book', 'red_flags', 'risk_details', 'revenue_segments', 'sentiment', 'sentiment_trend', 'liquidity_risk', 'market_risk', 'credit_risk', 'governance_risk', 'sector_benchmarks', '_validation', 'eps_confidence', 'eps_status', 'roe_confidence', 'roe_status', 'debt_equity_confidence', 'debt_equity_status', 'profit_margin_confidence', 'profit_margin_status', 'market_cap_confidence', 'market_cap_status', 'pe_ratio_confidence', 'pe_ratio_status']
+[1768578863.67079] Calling OVERVIEW for IBM
+[1768578864.4794164] OVERVIEW call done. Data: True
+[1768578864.4799895] OVERVIEW check failed for IBM: We have detected your API key as 2UF272OMWYPCZCSP and our standard API rate limit is 25 requests per day. Please subscribe to any of the premium plans at https://www.alphavantage.co/premium/ to instantly remove all daily rate limits.
+[1768578864.4825423] Promoting metrics with LLM...
+[1768578879.3368442] LLM response received. Length: 2476
+[1768578879.33792] Calling sentiment_analyzer for IBM
+[1768578881.473351] Sentiment analysis complete
+[1768578881.9652436] metrics extraction complete. Keys: ['company_name', 'company_description', 'fiscal_year', 'revenue', 'net_income', 'revenue_growth', 'profit_margin', 'risk_score', 'volatility', 'eps', 'pe_ratio', 'roe', 'revenue_cagr', 'debt_equity', 'current_ratio', 'ownership', 'beta', 'market_cap', 'dividend_yield', 'free_cash_flow', 'price_to_book', 'red_flags', 'risk_details', 'revenue_segments', 'sentiment', 'sentiment_trend', 'liquidity_risk', 'market_risk', 'credit_risk', 'governance_risk', 'sector_benchmarks', '_validation', 'eps_confidence', 'eps_status', 'roe_confidence', 'roe_status', 'debt_equity_confidence', 'debt_equity_status', 'profit_margin_confidence', 'profit_margin_status', 'market_cap_confidence', 'market_cap_status', 'pe_ratio_confidence', 'pe_ratio_status']
+[1768579102.5467145] Calling OVERVIEW for IBM
+[1768579103.4081588] OVERVIEW call done. Data: True
+[1768579103.4094093] OVERVIEW check failed for IBM: We have detected your API key as 2UF272OMWYPCZCSP and our standard API rate limit is 25 requests per day. Please subscribe to any of the premium plans at https://www.alphavantage.co/premium/ to instantly remove all daily rate limits.
+[1768579103.4134912] Promoting metrics with LLM...
+[1768579117.038549] LLM response received. Length: 2476
+[1768579117.039523] Calling sentiment_analyzer for IBM
+[1768579119.1260748] Sentiment analysis complete
+[1768579119.3827372] metrics extraction complete. Keys: ['company_name', 'company_description', 'fiscal_year', 'revenue', 'net_income', 'revenue_growth', 'profit_margin', 'risk_score', 'volatility', 'eps', 'pe_ratio', 'roe', 'revenue_cagr', 'debt_equity', 'current_ratio', 'ownership', 'beta', 'market_cap', 'dividend_yield', 'free_cash_flow', 'price_to_book', 'red_flags', 'risk_details', 'revenue_segments', 'sentiment', 'sentiment_trend', 'liquidity_risk', 'market_risk', 'credit_risk', 'governance_risk', 'sector_benchmarks', '_validation', 'eps_confidence', 'eps_status', 'roe_confidence', 'roe_status', 'debt_equity_confidence', 'debt_equity_status', 'profit_margin_confidence', 'profit_margin_status', 'market_cap_confidence', 'market_cap_status', 'pe_ratio_confidence', 'pe_ratio_status']
+[1768579310.7647212] Calling OVERVIEW for IBM
+[1768579312.4744952] OVERVIEW call done. Data: True
+[1768579312.475172] OVERVIEW check failed for IBM: We have detected your API key as 2UF272OMWYPCZCSP and our standard API rate limit is 25 requests per day. Please subscribe to any of the premium plans at https://www.alphavantage.co/premium/ to instantly remove all daily rate limits.
+[1768579312.4774106] Promoting metrics with LLM...
+[1768579325.0435169] LLM response received. Length: 2379
+[1768579325.0444613] Calling sentiment_analyzer for IBM
+[1768579326.1935682] Sentiment analysis complete
+[1768579326.3772342] metrics extraction complete. Keys: ['company_name', 'company_description', 'fiscal_year', 'revenue', 'net_income', 'revenue_growth', 'profit_margin', 'risk_score', 'volatility', 'eps', 'pe_ratio', 'roe', 'revenue_cagr', 'debt_equity', 'current_ratio', 'ownership', 'beta', 'market_cap', 'dividend_yield', 'free_cash_flow', 'price_to_book', 'red_flags', 'risk_details', 'revenue_segments', 'sentiment', 'sentiment_trend', 'liquidity_risk', 'market_risk', 'credit_risk', 'governance_risk', 'sector_benchmarks', '_validation', 'eps_confidence', 'eps_status', 'roe_confidence', 'roe_status', 'debt_equity_confidence', 'debt_equity_status', 'profit_margin_confidence', 'profit_margin_status', 'market_cap_confidence', 'market_cap_status', 'pe_ratio_confidence', 'pe_ratio_status']
+[1768579916.1926153] Calling OVERVIEW for IBM
+[1768579917.0103328] OVERVIEW call done. Data: True
+[1768579917.0108485] OVERVIEW check failed for IBM: Thank you for using Alpha Vantage! Please consider spreading out your free API requests more sparingly (1 request per second). You may subscribe to any of the premium plans at https://www.alphavantage.co/premium/ to lift the free key rate limit (25 requests per day), raise the per-second burst limit, and instantly unlock all premium endpoints
+[1768579917.0124428] Promoting metrics with LLM...
+[1768579930.6796012] LLM response received. Length: 2476
+[1768579930.680487] Calling sentiment_analyzer for IBM
+[1768579931.8058581] Sentiment analysis complete
+[1768579932.054802] metrics extraction complete. Keys: ['company_name', 'company_description', 'fiscal_year', 'revenue', 'net_income', 'revenue_growth', 'profit_margin', 'risk_score', 'volatility', 'eps', 'pe_ratio', 'roe', 'revenue_cagr', 'debt_equity', 'current_ratio', 'ownership', 'beta', 'market_cap', 'dividend_yield', 'free_cash_flow', 'price_to_book', 'red_flags', 'risk_details', 'revenue_segments', 'sentiment', 'sentiment_trend', 'liquidity_risk', 'market_risk', 'credit_risk', 'governance_risk', 'sector_benchmarks', '_validation', 'eps_confidence', 'eps_status', 'roe_confidence', 'roe_status', 'debt_equity_confidence', 'debt_equity_status', 'profit_margin_confidence', 'profit_margin_status', 'market_cap_confidence', 'market_cap_status', 'pe_ratio_confidence', 'pe_ratio_status']
+[1768580219.1810796] Calling OVERVIEW for IBM
+[1768580220.006317] OVERVIEW call done. Data: True
+[1768580220.007077] OVERVIEW check failed for IBM: We have detected your API key as 2UF272OMWYPCZCSP and our standard API rate limit is 25 requests per day. Please subscribe to any of the premium plans at https://www.alphavantage.co/premium/ to instantly remove all daily rate limits.
+[1768580220.0100348] Promoting metrics with LLM...
+[1768580234.6850948] LLM response received. Length: 2476
+[1768580234.6857443] Calling sentiment_analyzer for IBM
+[1768580236.1158924] Sentiment analysis complete
+[1768580236.2756813] metrics extraction complete. Keys: ['company_name', 'company_description', 'fiscal_year', 'revenue', 'net_income', 'revenue_growth', 'profit_margin', 'risk_score', 'volatility', 'eps', 'pe_ratio', 'roe', 'revenue_cagr', 'debt_equity', 'current_ratio', 'ownership', 'beta', 'market_cap', 'dividend_yield', 'free_cash_flow', 'price_to_book', 'red_flags', 'risk_details', 'revenue_segments', 'sentiment', 'sentiment_trend', 'liquidity_risk', 'market_risk', 'credit_risk', 'governance_risk', 'sector_benchmarks', '_validation', 'eps_confidence', 'eps_status', 'roe_confidence', 'roe_status', 'debt_equity_confidence', 'debt_equity_status', 'profit_margin_confidence', 'profit_margin_status', 'market_cap_confidence', 'market_cap_status', 'pe_ratio_confidence', 'pe_ratio_status']
+[1768580656.190783] Calling OVERVIEW for IBM (2s delay)
+[1768580659.156671] OVERVIEW call done. Data: True
+[1768580659.1573157] OVERVIEW check failed for IBM: We have detected your API key as 2UF272OMWYPCZCSP and our standard API rate limit is 25 requests per day. Please subscribe to any of the premium plans at https://www.alphavantage.co/premium/ to instantly remove all daily rate limits.
+[1768580659.1603332] Promoting metrics with LLM...
+[1768580669.8473353] LLM response received. Length: 2476
+[1768580669.8482869] Calling sentiment_analyzer for IBM
+[1768580671.2861626] Sentiment analysis complete
+[1768580671.5830717] metrics extraction complete. Keys: ['company_name', 'company_description', 'fiscal_year', 'revenue', 'net_income', 'revenue_growth', 'profit_margin', 'risk_score', 'volatility', 'eps', 'pe_ratio', 'roe', 'revenue_cagr', 'debt_equity', 'current_ratio', 'ownership', 'beta', 'market_cap', 'dividend_yield', 'free_cash_flow', 'price_to_book', 'red_flags', 'risk_details', 'revenue_segments', 'sentiment', 'sentiment_trend', 'liquidity_risk', 'market_risk', 'credit_risk', 'governance_risk', 'sector_benchmarks', '_validation', 'eps_confidence', 'eps_status', 'roe_confidence', 'roe_status', 'debt_equity_confidence', 'debt_equity_status', 'profit_margin_confidence', 'profit_margin_status', 'market_cap_confidence', 'market_cap_status', 'pe_ratio_confidence', 'pe_ratio_status']
+[1768623107.2883735] Calling OVERVIEW for IBM (2s delay)
+[1768623110.5002472] OVERVIEW call done. Data: True
+[1768623110.5006275] Calling INCOME_STATEMENT (2s sleep first)
+[1768623113.8637984] Calling BALANCE_SHEET (2s sleep first)
+[1768623118.1959739] Calling CASH_FLOW (2s sleep first)
+[1768623121.8815649] CASH_FLOW done. Data: True
+[1768623121.883159] Promoting metrics with LLM...
+[1768623366.3361943] Calling OVERVIEW for IBM (2s delay)
+[1768623372.9856505] OVERVIEW call done. Data: True
+[1768623372.9862523] Calling INCOME_STATEMENT (2s sleep first)
+[1768623377.189364] Calling BALANCE_SHEET (2s sleep first)
+[1768623381.4644027] Calling CASH_FLOW (2s sleep first)
+[1768623385.941325] CASH_FLOW done. Data: True
+[1768623385.9437532] Promoting metrics with LLM...
+[1768623700.399894] Calling OVERVIEW for IBM (2s delay)
+[1768623706.7584903] OVERVIEW call done. Data: True
+[1768623706.7584903] Calling INCOME_STATEMENT (2s sleep first)
+[1768623714.624751] Calling BALANCE_SHEET (2s sleep first)
+[1768623717.9596837] Calling CASH_FLOW (2s sleep first)
+[1768623721.512163] CASH_FLOW done. Data: True
+[1768623721.515276] Promoting metrics with LLM...
+[1768623723.0498798] LLM response received. Length: 2455
+[1768623723.0513995] Calling sentiment_analyzer for IBM
+[1768623724.1316268] Sentiment analysis complete
+[1768623724.1609242] metrics extraction complete. Keys: ['company_name', 'company_description', 'fiscal_year', 'revenue', 'net_income', 'revenue_growth', 'profit_margin', 'risk_score', 'volatility', 'eps', 'pe_ratio', 'roe', 'revenue_cagr', 'debt_equity', 'current_ratio', 'ownership', 'beta', 'market_cap', 'dividend_yield', 'free_cash_flow', 'price_to_book', 'red_flags', 'risk_details', 'revenue_segments', 'ticker', 'ticker_status', 'ticker_confidence', 'eps_status', 'eps_confidence', 'pe_ratio_status', 'pe_ratio_confidence', 'roe_status', 'roe_confidence', 'revenue_cagr_status', 'revenue_cagr_confidence', 'revenue_growth_status', 'revenue_growth_confidence', 'revenue_growth_trend', 'revenue_growth_trend_status', 'revenue_growth_trend_confidence', 'profit_margin_status', 'profit_margin_confidence', 'profit_trend', 'profit_trend_status', 'profit_trend_confidence', 'market_cap_status', 'market_cap_confidence', 'dividend_yield_status', 'dividend_yield_confidence', 'debt_equity_status', 'debt_equity_confidence', 'beta_status', 'beta_confidence', 'ownership_status', 'ownership_confidence', 'free_cash_flow_status', 'free_cash_flow_confidence', 'price_to_book_status', 'price_to_book_confidence', 'liquidity_risk', 'liquidity_risk_status', 'liquidity_risk_confidence', 'market_risk', 'market_risk_status', 'market_risk_confidence', 'credit_risk', 'credit_risk_status', 'credit_risk_confidence', 'governance_risk', 'governance_risk_status', 'governance_risk_confidence', 'history', 'history_status', 'history_confidence', 'raw_overview', 'raw_overview_status', 'raw_overview_confidence', 'sentiment', 'sentiment_trend', 'sector_benchmarks', '_validation']
+[1768623836.1109767] Calling OVERVIEW for IBM (2s delay)
+[1768623839.387577] OVERVIEW call done. Data: True
+[1768623839.3880699] Calling INCOME_STATEMENT (2s sleep first)
+[1768623843.4839153] Calling BALANCE_SHEET (2s sleep first)
+[1768623846.3978167] BALANCE_SHEET rate limited
+[1768623846.3998408] Promoting metrics with LLM...
+[1768623848.0046005] LLM response received. Length: 1942
+[1768623848.005492] Calling sentiment_analyzer for IBM
+[1768623849.035103] Sentiment analysis complete
+[1768623849.2438133] metrics extraction complete. Keys: ['company_name', 'company_description', 'fiscal_year', 'revenue', 'net_income', 'revenue_growth', 'profit_margin', 'risk_score', 'volatility', 'eps', 'pe_ratio', 'roe', 'revenue_cagr', 'debt_equity', 'current_ratio', 'ownership', 'beta', 'market_cap', 'dividend_yield', 'free_cash_flow', 'price_to_book', 'red_flags', 'risk_details', 'revenue_segments', 'ticker', 'ticker_status', 'ticker_confidence', 'eps_status', 'eps_confidence', 'pe_ratio_status', 'pe_ratio_confidence', 'roe_status', 'roe_confidence', 'revenue_cagr_status', 'revenue_cagr_confidence', 'revenue_growth_status', 'revenue_growth_confidence', 'revenue_growth_trend', 'revenue_growth_trend_status', 'revenue_growth_trend_confidence', 'profit_margin_status', 'profit_margin_confidence', 'profit_trend', 'profit_trend_status', 'profit_trend_confidence', 'market_cap_status', 'market_cap_confidence', 'dividend_yield_status', 'dividend_yield_confidence', 'debt_equity_status', 'debt_equity_confidence', 'beta_status', 'beta_confidence', 'ownership_status', 'ownership_confidence', 'price_to_book_status', 'price_to_book_confidence', 'liquidity_risk', 'liquidity_risk_status', 'liquidity_risk_confidence', 'market_risk', 'market_risk_status', 'market_risk_confidence', 'credit_risk', 'credit_risk_status', 'credit_risk_confidence', 'governance_risk', 'governance_risk_status', 'governance_risk_confidence', 'history', 'history_status', 'history_confidence', 'raw_overview', 'raw_overview_status', 'raw_overview_confidence', 'sentiment', 'sentiment_trend', 'sector_benchmarks', '_validation']
+[1770106402.6777024] Calling OVERVIEW for MSFT (2s delay)
+[1770106405.3642647] OVERVIEW call done. Data: True
+[1770106405.3649285] Calling INCOME_STATEMENT (2s sleep first)
+[1770106408.9448278] Calling BALANCE_SHEET (2s sleep first)
+[1770106412.3367386] Calling CASH_FLOW (2s sleep first)
+[1770106415.5274746] CASH_FLOW done. Data: True
+[1770106417.3465378] Risk AI response: ```json
+{
+    "risk_score": 5.5,
+    "red_flags": ["High Debt", "Declining Margins"],
+    "profit_trend": "positive",
+    "risk_details": {
+        "liquidity": {
+            "score": 40,
+            "factors": [
+                "Low cash",
+                "High burn rate"
+            ],
+            "alarming_details": "Potential insolvency if burn rate continues.",
+            "industry_avg": 30
+        },
+        "market": {
+            "score": 60,
+            "factors": [
+                "Hi
+[1770106417.347195] Risk details normalized. Keys: ['liquidity', 'market', 'credit', 'governance']
+[1770106766.4866548] Calling OVERVIEW for NVDA (2s delay)
+[1770106769.1874363] OVERVIEW call done. Data: True
+[1770106769.187954] Calling INCOME_STATEMENT (2s sleep first)
+[1770106772.7583308] Calling BALANCE_SHEET (2s sleep first)
+[1770106776.211596] Calling CASH_FLOW (2s sleep first)
+[1770106779.416921] CASH_FLOW done. Data: True
+[1770106781.7294075] Risk AI response: ```json
+{
+    "risk_score": 5.5,
+    "red_flags": ["High Debt", "Declining Margins"],
+    "profit_trend": "positive",
+    "risk_details": {
+        "liquidity": {
+            "score": 40,
+            "factors": ["Low cash"],
+            "alarming_details": "Potential insolvency if burn rate continues.",
+            "industry_avg": 30
+        },
+        "market": {
+            "score": 60,
+            "factors": ["High beta"],
+            "alarming_details": "Vulnerable to sector downturns.",
+   
+[1770106781.730253] Risk details normalized. Keys: ['liquidity', 'market', 'credit', 'governance']
+[1770106848.3737113] Calling OVERVIEW for MSFT (2s delay)
+[1770106851.1504266] OVERVIEW call done. Data: True
+[1770106851.1510231] Calling INCOME_STATEMENT (2s sleep first)
+[1770106854.5342348] Calling BALANCE_SHEET (2s sleep first)
+[1770106857.929436] Calling CASH_FLOW (2s sleep first)
+[1770106861.18062] CASH_FLOW done. Data: True
+[1770106863.3096626] Risk AI response: ```json
+{
+    "risk_score": 5.5,
+    "red_flags": ["High Debt", "Declining Margins"],
+    "profit_trend": "positive",
+    "risk_details": {
+        "liquidity": {
+            "score": 40,
+            "factors": ["Low cash"],
+            "alarming_details": "Potential insolvency if burn rate continues.",
+            "industry_avg": 30
+        },
+        "market": {
+            "score": 60,
+            "factors": ["High beta"],
+            "alarming_details": "Vulnerable to sector downturns.",
+   
+[1770106863.3105104] Risk details normalized. Keys: ['liquidity', 'market', 'credit', 'governance']
+[1770363177.6274621] Calling OVERVIEW for NVDA (2s delay)
+[1770363180.368229] OVERVIEW call done. Data: True
+[1770363180.3686388] Calling INCOME_STATEMENT (2s sleep first)
+[1770363183.6162105] Calling BALANCE_SHEET (2s sleep first)
+[1770363187.0187764] Calling CASH_FLOW (2s sleep first)
+[1770363190.26069] CASH_FLOW done. Data: True
+[1770363192.485771] Risk AI response: ```json
+{
+    "risk_score": 5.5,
+    "red_flags": ["High Debt", "Declining Margins"],
+    "profit_trend": "positive",
+    "risk_details": {
+        "liquidity": {
+            "score": 40,
+            "factors": ["Low cash"],
+            "alarming_details": "Potential insolvency if burn rate continues.",
+            "industry_avg": 30
+        },
+        "market": {
+            "score": 60,
+            "factors": ["High beta"],
+            "alarming_details": "Vulnerable to sector downturns.",
+   
+[1770363192.486297] Risk details normalized. Keys: ['liquidity', 'market', 'credit', 'governance']
+[1770876672.296545] Calling OVERVIEW for NVDA (2s delay)
+[1770876675.3653986] OVERVIEW call done. Data: True
+[1770876675.3658304] Calling INCOME_STATEMENT (2s sleep first)
+[1770876680.425052] Calling BALANCE_SHEET (2s sleep first)
+[1770876684.3143258] Calling CASH_FLOW (2s sleep first)
+[1770876687.0772123] CASH_FLOW done. Data: True
+[1770876689.90778] Risk AI response: ```json
+{
+    "risk_score": 5.5,
+    "red_flags": ["High Debt", "Declining Margins"],
+    "profit_trend": "positive",
+    "risk_details": {
+        "liquidity": {
+            "score": 40,
+            "factors": ["Low cash"],
+            "alarming_details": "Potential insolvency if burn rate continues.",
+            "industry_avg": 30
+        },
+        "market": {
+            "score": 60,
+            "factors": ["High beta"],
+            "alarming_details": "Vulnerable to sector downturns.",
+   
+[1770876689.9084184] Risk details normalized. Keys: ['liquidity', 'market', 'credit', 'governance']

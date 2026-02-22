@@ -1,0 +1,576 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FinAnalyst - Financial Dashboard</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="/static/styles.css?v=4">
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+
+<body>
+    <div class="app-container">
+        <!-- Main Content Area -->
+        <main class="main-content">
+            <header class="header-top">
+                <div class="brand">
+                    <img src="/static/assets/logo.png" alt="FinAnalyst Logo" class="brand-logo">
+                    <span class="brand-name">FinAnalyst</span>
+                </div>
+                <div class="header-actions">
+                    <div id="file-info" class="file-info hidden">
+                        <i class="fa-solid fa-file-check"></i>
+                        <span id="filename">report.pdf</span>
+                    </div>
+
+                    <!-- NEW: Ticker Input Area -->
+                    <div id="ticker-input-area" class="ticker-input-area">
+                        <div class="input-group">
+                            <span class="input-icon"><i class="fa-solid fa-magnifying-glass"></i></span>
+                            <input type="text" id="ticker-input" placeholder="Enter Ticker (e.g. AAPL)"
+                                autocomplete="off">
+                        </div>
+                        <button id="analyze-btn" class="btn btn-primary-header">
+                            Analyze <i class="fa-solid fa-arrow-right"></i>
+                        </button>
+                    </div>
+
+                    <button id="collapse-sidebar" class="icon-btn tooltip" title="Toggle Sidebar">
+                        <i class="fa-solid fa-table-columns"></i>
+                    </button>
+                </div>
+            </header>
+
+            <!-- Dashboard Tabs -->
+            <nav class="dashboard-tabs">
+                <button class="tab-btn active" data-tab="summary">Summary</button>
+                <button class="tab-btn" data-tab="financials">Financials</button>
+                <button class="tab-btn" data-tab="risks">Risk Analysis</button>
+                <button class="tab-btn" data-tab="news">Market News</button>
+                <button id="export-pdf-top" class="export-btn-minimal"><i class="fa-solid fa-download"></i></button>
+            </nav>
+
+            <!-- KPI Header (The Golden Corner) -->
+            <div id="kpi-header" class="kpi-header hidden">
+                <div class="company-info-small">
+                    <h2 id="kpi-company-name">Company Name</h2>
+                    <span id="kpi-ticker-tag" class="ticker-tag">TICKER</span>
+                </div>
+                <div class="kpi-grid">
+                    <div class="kpi-item">
+                        <span class="kpi-label">REVENUE GROWTH</span>
+                        <div class="kpi-value-row">
+                            <span id="kpi-rev-growth" class="kpi-value positive">+0.0%</span>
+                            <canvas id="kpi-rev-sparkline" class="mini-sparkline"></canvas>
+                        </div>
+                    </div>
+                    <div class="kpi-item">
+                        <span class="kpi-label">PROFIT MARGIN</span>
+                        <div class="kpi-value-row">
+                            <span id="kpi-profit-margin" class="kpi-value positive">0.0%</span>
+                            <canvas id="kpi-profit-sparkline" class="mini-sparkline"></canvas>
+                        </div>
+                    </div>
+                    <div class="kpi-item">
+                        <span class="kpi-label">RISK SCORE</span>
+                        <div class="kpi-value-row">
+                            <span id="kpi-risk-score" class="kpi-value">0.0</span>
+                            <div class="kpi-risk-bar">
+                                <div id="kpi-risk-fill" class="fill"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Hero Overview Card -->
+            <div id="hero-card" class="hero-card hidden">
+                <div class="hero-header">
+                    <div>
+                        <h2>Financial Analysis Overview</h2>
+                        <p id="hero-subtitle">Company | FY</p>
+                    </div>
+                    <span class="live-badge">
+                        <i class="fa-solid fa-lightbulb"></i> Live Insights: <span id="live-company">—</span>
+                    </span>
+                </div>
+
+                <div class="hero-body">
+                    <div class="hero-main">
+                        <div class="company-header">
+                            <h1 id="hero-company">Company Name</h1>
+                            <span id="hero-fy" class="fy-badge">FY 2023</span>
+                        </div>
+
+                        <div class="metrics-row">
+                            <div class="metric">
+                                <span id="hero-revenue-growth" class="value positive">+0.0%</span>
+                                <span class="label">Revenue growth <i id="revenue-icon"
+                                        class="fa-solid fa-arrow-trend-up"></i></span>
+                            </div>
+                            <div class="metric">
+                                <span id="hero-profit" class="value negative">0.0%</span>
+                                <span class="label">Profit <i id="profit-icon"
+                                        class="fa-solid fa-arrow-trend-down"></i></span>
+                            </div>
+                        </div>
+
+                        <div class="indicators-row">
+                            <span class="indicator"><i class="fa-solid fa-chart-simple"></i> <span
+                                    id="hero-vol1">High</span></span>
+                            <div class="risk-score">
+                                <i class="fa-solid fa-shield-halved"></i> Risk Score
+                                <span id="hero-risk">0.0</span> / 10
+                                <div class="risk-meter">
+                                    <div id="risk-meter-fill" class="risk-meter-fill" style="width: 0%"></div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="action-buttons">
+                            <button class="btn btn-primary">Run Full Analysis</button>
+                            <button class="btn btn-secondary">View Forecast</button>
+                        </div>
+                    </div>
+
+                    <!-- Risk Radar (Relocated to Hero Card) -->
+                    <div class="hero-risk-radar">
+                        <h3><i class="fa-solid fa-radar"></i> RISK RADAR</h3>
+                        <div class="risk-chart-container" style="height: 250px; width: 100%; position: relative;">
+                            <canvas id="risk-radar-chart"></canvas>
+                        </div>
+
+                        <!-- Sentiment Analysis Section -->
+                        <div class="sentiment-section" id="sentiment-section">
+                            <h3><i class="fa-solid fa-newspaper"></i> MARKET SENTIMENT</h3>
+                            <div class="sentiment-overview">
+                                <div class="sentiment-score-box">
+                                    <span class="sentiment-label" id="sentiment-label">Neutral</span>
+                                    <span class="sentiment-value" id="sentiment-score">0.00</span>
+                                </div>
+                                <div class="sentiment-headlines" id="sentiment-headlines">
+                                    <span style="font-size:0.8rem; color:var(--text-secondary);">Waiting for
+                                        analysis...</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Risk Insight Panel (New) -->
+                    <div id="risk-insight-panel" class="risk-insight-panel hidden">
+                        <div class="insight-header">
+                            <h4 id="insight-title">Risk Insight</h4>
+                            <button id="close-insight" class="close-btn">&times;</button>
+                        </div>
+                        <div id="insight-content" class="insight-content">
+                            <!-- Populated via JS -->
+                        </div>
+                    </div>
+
+                    <div id="red-flags-panel" class="red-flags-panel">
+                        <div class="flag-item"><i class="fa-solid fa-triangle-exclamation"></i> <span>No data</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="resizer vertical" id="hero-resizer"></div>
+            </div>
+
+            <div id="dashboard-content" class="dashboard-grid">
+                <!-- Welcome Overlay -->
+                <div id="dashboard-welcome" class="dashboard-welcome">
+                    <div class="welcome-content">
+                        <div class="welcome-icon">
+                            <i class="fa-solid fa-chart-line"></i>
+                        </div>
+                        <h1>Welcome to FinAnalyst</h1>
+                        <p>Enter a stock ticker to generate a comprehensive live financial dashboard.</p>
+                        <div class="welcome-input-group">
+                            <input type="text" id="welcome-ticker-input" placeholder="Enter Ticker (e.g. NVDA)">
+                            <button id="welcome-analyze-btn" class="btn btn-primary">
+                                <i class="fa-solid fa-bolt"></i> Analyze
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Tab: Summary (Default) -->
+                <section id="tab-summary" class="tab-panel active">
+                    <!-- 12-Column Layout -->
+                    <div class="grid-container">
+                        <!-- Top Row: Overview + Segment -->
+                        <div class="col-12 card hero-card-new">
+                            <div class="card-header">
+                                <h3>Operational Overview</h3>
+                                <span class="fy-badge-new" id="summary-fy">FY 2024</span>
+                            </div>
+                            <p id="summary-desc" class="description-text">Extracting analysis...</p>
+                        </div>
+                        <div class="col-12 card revenue-deep-dive-card">
+                            <div class="card-header">
+                                <h3>Revenue Segmentation & Trends</h3>
+                                <div class="card-header-actions">
+                                    <span id="revenue-fy-toggle" class="fy-badge">FY 2024 vs FY 2023</span>
+                                </div>
+                            </div>
+                            <div class="revenue-charts-container">
+                                <div class="chart-box">
+                                    <h4>FY 2024</h4>
+                                    <div class="chart-container-donut">
+                                        <canvas id="revenue-donut-chart-2024"></canvas>
+                                    </div>
+                                </div>
+                                <div class="chart-box prev-year">
+                                    <h4>FY 2023</h4>
+                                    <div class="chart-container-donut">
+                                        <canvas id="revenue-donut-chart-2023"></canvas>
+                                    </div>
+                                </div>
+                            </div>
+                            <div id="revenue-segment-legend" class="custom-legend"></div>
+                            <div class="revenue-insight-box">
+                                <p id="revenue-ai-insight">Segment performance analysis...</p>
+                            </div>
+                            <div class="segment-details-table-wrapper">
+                                <table id="segment-details-table">
+                                    <thead>
+                                        <tr>
+                                            <th>Segment</th>
+                                            <th>Revenue</th>
+                                            <th>Mix %</th>
+                                            <th>YoY Growth</th>
+                                            <th>Trend</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody id="segment-table-body"></tbody>
+                                </table>
+                            </div>
+                        </div>
+
+                        <!-- Mid Row: Sentiment Trend (Full Width) -->
+                        <div class="col-12 card sentiment-trend-card">
+                            <div class="card-header">
+                                <h3>Sentiment Trend (7D)</h3>
+                                <span id="current-sentiment-score" class="sentiment-badge-big">0.74</span>
+                            </div>
+                            <div class="chart-container-trend">
+                                <canvas id="sentiment-trend-chart"></canvas>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Tab: Financials -->
+                <section id="tab-financials" class="tab-panel">
+                    <div class="grid-container">
+                        <!-- Top Row: Metric Cards with Industry Comparison -->
+                        <div class="col-4 card financials-metric-card">
+                            <div class="card-header">
+                                <h3>Valuation</h3>
+                            </div>
+                            <div id="metrics-valuation" class="financials-metrics-list"></div>
+                        </div>
+                        <div class="col-4 card financials-metric-card">
+                            <div class="card-header">
+                                <h3>Efficiency</h3>
+                            </div>
+                            <div id="metrics-efficiency" class="financials-metrics-list"></div>
+                        </div>
+                        <div class="col-4 card financials-metric-card">
+                            <div class="card-header">
+                                <h3>Solvency</h3>
+                            </div>
+                            <div id="metrics-solvency" class="financials-metrics-list"></div>
+                        </div>
+
+                        <!-- Middle Row: Historical Performance Charts -->
+                        <div class="col-6 card">
+                            <div class="card-header">
+                                <h3>Historical Performance (5 Years)</h3>
+                            </div>
+                            <div class="chart-container-financials">
+                                <canvas id="historical-performance-chart"></canvas>
+                            </div>
+                        </div>
+                        <div class="col-6 card">
+                            <div class="card-header">
+                                <h3>Margin Trends (5 Years)</h3>
+                            </div>
+                            <div class="chart-container-financials">
+                                <canvas id="margin-trends-chart"></canvas>
+                            </div>
+                        </div>
+
+                        <!-- Bottom Row: Key Metrics -->
+                        <div class="col-12 card">
+                            <div class="card-header">
+                                <h3>Key Metrics</h3>
+                            </div>
+                            <div id="key-metrics-grid" class="key-metrics-financials-grid"></div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Tab: Risks -->
+                <section id="tab-risks" class="tab-panel">
+                    <div class="grid-container">
+                        <!-- Top Row: Visual Risk Mapping -->
+                        <div class="col-6 card">
+                            <div class="card-header">
+                                <h3>Risk Profile Benchmarking</h3>
+                            </div>
+                            <div class="chart-container-radar">
+                                <canvas id="risk-radar-main"></canvas>
+                            </div>
+                        </div>
+                        <div class="col-6 card">
+                            <div class="card-header">
+                                <h3>Financial Stability Benchmarking</h3>
+                            </div>
+                            <div class="chart-container-stability">
+                                <canvas id="stability-score-chart"></canvas>
+                            </div>
+                        </div>
+
+                        <!-- Bottom Row: Detailed Risk Cards -->
+                        <div class="col-12 detailed-risks-container">
+                            <div class="section-header">
+                                <h3>Detailed Risk Assessment</h3>
+                                <span class="last-updated">Last Updated: <span id="risk-timestamp">Just
+                                        Now</span></span>
+                            </div>
+                            <div id="detailed-risk-cards" class="risk-cards-grid">
+                                <!-- Populated via JS -->
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Tab: News -->
+                <section id="tab-news" class="tab-panel">
+                    <div class="grid-container">
+                        <div class="col-12 card news-list-card">
+                            <div class="card-header">
+                                <h3>Top Market News</h3>
+                            </div>
+                            <div id="news-tab-list" class="news-list-container"></div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </main>
+
+        <!-- Right Sidebar -->
+        <aside id="sidebar" class="sidebar-right">
+            <div class="resizer horizontal" id="sidebar-resizer"></div>
+            <!-- Hidden inputs for app.js compatibility if needed, or we just remove them from app.js -->
+            <div class="hidden">
+                <input type="password" id="groq-key">
+                <input type="password" id="av-key">
+                <button id="init-btn"></button>
+            </div>
+
+            <!-- Live Insights Card -->
+            <div class="live-insights-card hidden">
+                <div class="insights-section">
+                    <h3>Live <span class="metrics-label">METRICS</span></h3>
+
+                    <div class="insight-metric">
+                        <div class="metric-header">
+                            <span class="metric-name">Net margin</span>
+                            <span id="live-margin" class="metric-value negative">8.1%</span>
+                        </div>
+                        <div class="metric-footer">
+                            <span id="live-margin-change" class="metric-sub">↓ from 9.6%</span>
+                        </div>
+                    </div>
+
+                    <div class="insight-metric red-flag">
+                        <div class="flag-header">
+                            <i class="fa-solid fa-triangle-exclamation"></i>
+                            <span class="flag-title">Red Flag</span>
+                        </div>
+                        <p id="live-flag" class="flag-desc">Rising debt-to-equity</p>
+                        <canvas id="flag-sparkline" class="flag-chart"></canvas>
+                    </div>
+
+                    <div class="insight-metric">
+                        <div class="metric-header">
+                            <span class="metric-name">Volatility</span>
+                            <span id="live-volatility" class="metric-value">High</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Key Metrics -->
+            <div class="metrics-section">
+                <h3><i class="fa-solid fa-chart-simple"></i> Key METRICS <span id="metrics-live-badge"
+                        class="live-pulse-badge hidden"><i class="fa-solid fa-circle"></i> LIVE</span></h3>
+                <div class="key-metrics-grid">
+                    <div class="metric-box">
+                        <div class="metric-title-row">
+                            <span class="label">EPS</span>
+                            <i id="conf-eps" class="fa-solid fa-circle-check confidence-icon hidden"
+                                title="Verified"></i>
+                        </div>
+                        <span id="metric-eps" class="value">0.00</span>
+                        <canvas id="spark-eps" width="40" height="20"></canvas>
+                    </div>
+                    <div class="metric-box">
+                        <div class="metric-title-row">
+                            <span class="label">P/E</span>
+                            <i id="conf-pe" class="fa-solid fa-circle-check confidence-icon hidden"
+                                title="Verified"></i>
+                        </div>
+                        <span id="metric-pe" class="value">0.00</span>
+                        <canvas id="spark-pe" width="40" height="20"></canvas>
+                    </div>
+                    <div class="metric-box">
+                        <div class="metric-title-row">
+                            <span class="label">Revenue CAGR</span>
+                            <i id="conf-cagr" class="fa-solid fa-circle-check confidence-icon hidden"
+                                title="Verified"></i>
+                        </div>
+                        <span id="metric-cagr" class="value">0.00</span>
+                        <canvas id="spark-cagr" width="40" height="20"></canvas>
+                    </div>
+                    <div class="metric-box">
+                        <div class="metric-title-row">
+                            <span class="label">ROE</span>
+                            <i id="conf-roe" class="fa-solid fa-circle-check confidence-icon hidden"
+                                title="Verified"></i>
+                        </div>
+                        <span id="metric-roe" class="value">0.0%</span>
+                        <canvas id="spark-roe" width="40" height="20"></canvas>
+                    </div>
+                    <div class="metric-box">
+                        <div class="metric-title-row">
+                            <span class="label">Debt / Equity</span>
+                            <i id="conf-debt" class="fa-solid fa-circle-check confidence-icon hidden"
+                                title="Verified"></i>
+                        </div>
+                        <span id="metric-debt" class="value">0.0</span>
+                        <canvas id="spark-debt" width="40" height="20"></canvas>
+                    </div>
+                    <div class="metric-box">
+                        <div class="metric-title-row">
+                            <span class="label">Market Cap</span>
+                            <i id="conf-cap" class="fa-solid fa-circle-check confidence-icon hidden"
+                                title="Verified"></i>
+                        </div>
+                        <span id="metric-cap" class="value">—</span>
+                        <canvas id="spark-cap" width="40" height="20"></canvas>
+                    </div>
+                </div>
+            </div>
+
+            <!-- New Utility Section in Right Sidebar -->
+            <div class="sidebar-footer">
+                <button id="reset-btn" class="btn danger full-width">
+                    <i class="fa-solid fa-trash-arrow-up"></i> Reset Chat
+                </button>
+                <button id="export-btn" class="btn secondary full-width">
+                    <i class="fa-solid fa-file-export"></i> Export PDF
+                </button>
+                <div class="status-indicator">
+                    <span id="status-dot" class="dot"></span>
+                    <span id="status-text">DISCONNECTED</span>
+                </div>
+            </div>
+        </aside>
+
+        <!-- Floating expand button (shown when sidebar is collapsed) -->
+        <div id="expand-sidebar-floating" title="Expand Sidebar">
+            <i class="fa-solid fa-angles-left"></i>
+        </div>
+    </div>
+
+    <!-- Floating Chatbot Interface -->
+    <button id="chatbot-toggle-btn" class="chatbot-toggle-btn tooltip" title="Open Assistant">
+        <i class="fa-solid fa-comment-dots"></i>
+        <span class="notification-dot hidden"></span>
+    </button>
+
+    <div id="chatbot-panel" class="chatbot-panel hidden">
+        <div class="chatbot-resize-handle" title="Drag to resize"></div>
+        <div class="chatbot-header">
+            <div class="chatbot-title">
+                <i class="fa-solid fa-robot"></i>
+                <span>AI Financial Assistant</span>
+            </div>
+            <button id="close-chat" class="icon-btn">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+        </div>
+
+        <!-- Quick Actions -->
+        <div class="quick-actions">
+            <button class="quick-action-btn" data-query="Summarize the key risks">
+                <i class="fa-solid fa-shield-halved"></i> Key Risks
+            </button>
+            <button class="quick-action-btn" data-query="What are the financial highlights?">
+                <i class="fa-solid fa-chart-line"></i> Highlights
+            </button>
+            <button class="quick-action-btn" data-query="Explain the revenue breakdown">
+                <i class="fa-solid fa-pie-chart"></i> Revenue
+            </button>
+            <button class="quick-action-btn" data-query="What is the current valuation?">
+                <i class="fa-solid fa-tags"></i> Valuation
+            </button>
+            <button class="quick-action-btn" data-query="Forecast next quarter">
+                <i class="fa-solid fa-crystal-ball"></i> Forecast
+            </button>
+        </div>
+
+        <div id="chat-messages" class="chat-messages">
+            <!-- Messages populated by app.js -->
+        </div>
+
+        <div class="input-area">
+            <div class="input-wrapper">
+                <textarea id="user-input" placeholder="Ask about the analysis..." rows="1" disabled></textarea>
+                <button id="send-btn" disabled><i class="fa-solid fa-paper-plane"></i></button>
+            </div>
+        </div>
+    </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels@2.0.0"></script>
+    <script src="/static/app.js"></script>
+    <style>
+        /* Quick inline style for ticker input, should be in styles.css ideally */
+        .ticker-input-area {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            margin-right: 1rem;
+            border-right: 1px solid var(--border-color);
+            padding-right: 1rem;
+        }
+
+        #ticker-input {
+            background: var(--bg-tertiary);
+            border: 1px solid var(--border-color);
+            color: var(--text-primary);
+            padding: 0.5rem;
+            border-radius: 6px;
+            width: 120px;
+        }
+
+        #ticker-input:focus {
+            outline: none;
+            border-color: var(--accent-color);
+        }
+    </style>
+    </div>
+    </div>
+</body>
+
+</html>

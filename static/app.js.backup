@@ -1,0 +1,590 @@
+document.addEventListener('DOMContentLoaded', () => {
+    // Elements
+    const groqKeyInput = document.getElementById('groq-key');
+    const avKeyInput = document.getElementById('av-key');
+    const initBtn = document.getElementById('init-btn');
+    const resetBtn = document.getElementById('reset-btn');
+    const exportBtn = document.getElementById('export-btn');
+
+    const dropZone = document.getElementById('drop-zone');
+    const fileInput = document.getElementById('pdf-upload');
+    const fileInfo = document.getElementById('file-info');
+    const fileNameDisplay = document.getElementById('filename');
+
+    const userInput = document.getElementById('user-input');
+    const sendBtn = document.getElementById('send-btn');
+    const chatMessages = document.getElementById('chat-messages');
+
+    const statusDot = document.getElementById('status-dot');
+    const statusText = document.getElementById('status-text');
+
+    // State
+    let isInitialized = false;
+    let isProcessing = false;
+
+    // Auto-fill Keys
+    (async () => {
+        try {
+            console.log("Attempting to fetch API keys from /api/env...");
+            const res = await fetch('/api/env');
+            if (res.ok) {
+                const data = await res.json();
+                console.log("API keys fetched:", data);
+
+                let keysFilled = false;
+
+                if (data.groq_api_key && groqKeyInput) {
+                    groqKeyInput.value = data.groq_api_key;
+                    groqKeyInput.style.borderColor = 'var(--primary)'; // Visual cue
+                    keysFilled = true;
+                }
+                if (data.alpha_vantage_key && avKeyInput) {
+                    avKeyInput.value = data.alpha_vantage_key;
+                    avKeyInput.style.borderColor = 'var(--primary)'; // Visual cue
+                }
+
+                if (keysFilled) {
+                    addMessage("API Keys pre-filled from environment.", "system");
+                    // Optional: Auto-init could go here if desired
+                }
+            } else {
+                console.warn("Failed to fetch API keys:", res.status, res.statusText);
+            }
+        } catch (e) {
+            console.error('Env fetch failed', e);
+            addMessage("Could not auto-fill API keys. Please enter them manually.", "system");
+        }
+    })();
+
+    // Helper: Add Message
+    function addMessage(content, type) {
+        const msgDiv = document.createElement('div');
+        msgDiv.className = `message ${type}`;
+
+        const contentDiv = document.createElement('div');
+        contentDiv.className = 'content';
+
+        if (type === 'ai') {
+            if (typeof content === 'object' && content !== null) {
+                // Render text part
+                const textPart = document.createElement('div');
+                textPart.innerHTML = marked.parse(content.text || '');
+                contentDiv.appendChild(textPart);
+
+                // Handle Interactive Chart
+                if (content.chart_data) {
+                    msgDiv.classList.add('wide-message');
+                    msgDiv.style.width = '95%'; // Force width inline to ensure it expands
+                    msgDiv.style.maxWidth = '95%';
+
+                    const chartContainer = document.createElement('div');
+                    chartContainer.style.marginTop = '1rem';
+                    chartContainer.style.height = '500px';
+
+                    chartContainer.style.width = '900px'; // Force full width
+
+                    const canvas = document.createElement('canvas');
+                    chartContainer.appendChild(canvas);
+                    contentDiv.appendChild(chartContainer);
+
+                    if (content.chart_data && content.chart_data.metrics) {
+                        const m = content.chart_data.metrics;
+                        const metricsDiv = document.createElement('div');
+                        metricsDiv.style.display = 'flex';
+                        metricsDiv.style.gap = '1rem';
+                        metricsDiv.style.marginTop = '1rem';
+                        metricsDiv.style.flexWrap = 'wrap';
+
+                        const createChip = (label, value) => `
+                            <div style="background:rgba(30,41,59,0.5); padding:0.5rem 1rem; border-radius:0.5rem; border:1px solid rgba(148,163,184,0.1); font-size:0.9rem;">
+                                <span style="color:#94a3b8; font-weight:500;">${label}:</span>
+                                <span style="color:#f8fafc; font-weight:600; margin-left:0.5rem;">${value || 'N/A'}</span>
+                            </div>
+                        `;
+
+                        metricsDiv.innerHTML =
+                            createChip('PE Ratio', m.pe_ratio) +
+                            createChip('Market Cap', m.market_cap) +
+                            createChip('Div Yield', m.dividend_yield);
+
+                        contentDiv.appendChild(metricsDiv);
+                    }
+
+                    // Initialize Chart
+                    const ctx = canvas.getContext('2d');
+                    Chart.defaults.font.family = "'Outfit', sans-serif";
+                    Chart.defaults.color = '#94a3b8';
+                    Chart.defaults.borderColor = 'rgba(148, 163, 184, 0.1)';
+
+                    new Chart(ctx, {
+                        type: 'line',
+                        data: {
+                            labels: content.chart_data.dates,
+                            datasets: [{
+                                label: `${content.chart_data.ticker} Price`,
+                                data: content.chart_data.prices,
+                                borderColor: '#8b5cf6', // Violet
+                                backgroundColor: (context) => {
+                                    const ctx = context.chart.ctx;
+                                    const gradient = ctx.createLinearGradient(0, 0, 0, 400);
+                                    gradient.addColorStop(0, 'rgba(139, 92, 246, 0.5)');
+                                    gradient.addColorStop(1, 'rgba(139, 92, 246, 0.0)');
+                                    return gradient;
+                                },
+                                borderWidth: 3,
+                                pointRadius: 0, // clean look, show on hover usually
+                                pointHoverRadius: 6,
+                                fill: true,
+                                tension: 0.4 // smoother curve
+                            }]
+                        },
+                        options: {
+                            responsive: true,
+                            maintainAspectRatio: false,
+                            interaction: {
+                                intersect: false,
+                                mode: 'index',
+                            },
+                            plugins: {
+                                legend: {
+                                    labels: {
+                                        color: '#cbd5e1',
+                                        font: { size: 14, weight: 600 }
+                                    }
+                                },
+                                tooltip: {
+                                    backgroundColor: 'rgba(15, 23, 42, 0.9)',
+                                    titleColor: '#f8fafc',
+                                    bodyColor: '#cbd5e1',
+                                    padding: 12,
+                                    borderColor: 'rgba(148, 163, 184, 0.1)',
+                                    borderWidth: 1,
+                                    displayColors: false,
+                                }
+                            },
+                            scales: {
+                                y: {
+                                    grid: { color: 'rgba(148, 163, 184, 0.1)' },
+                                    ticks: {
+                                        color: '#94a3b8',
+                                        font: { size: 12 }
+                                    }
+                                },
+                                x: {
+                                    grid: { display: false },
+                                    ticks: {
+                                        color: '#94a3b8',
+                                        font: { size: 12 },
+                                        maxTicksLimit: 8
+                                    }
+                                }
+                            }
+                        }
+                    });
+                }
+
+                // Handle Static Image
+                if (content.image_url) {
+                    const imgContainer = document.createElement('div');
+                    imgContainer.style.marginTop = '1rem';
+                    imgContainer.className = 'image-container';
+
+                    const img = document.createElement('img');
+                    img.src = content.image_url;
+                    img.alt = 'Financial Chart';
+                    img.style.maxWidth = '100%';
+                    img.style.borderRadius = '0.5rem';
+                    img.style.border = '1px solid var(--border)';
+
+                    imgContainer.appendChild(img);
+                    contentDiv.appendChild(imgContainer);
+                }
+
+            } else {
+                // Normal markdown
+                contentDiv.innerHTML = marked.parse(typeof content === 'string' ? content : JSON.stringify(content));
+            }
+        } else {
+            contentDiv.textContent = content; // User/System: plain text safe
+        }
+
+        msgDiv.appendChild(contentDiv);
+        chatMessages.appendChild(msgDiv);
+        chatMessages.scrollTop = chatMessages.scrollHeight;
+        return msgDiv;
+    }
+
+    // Helper: Add Loading Indicator
+    function addLoading() {
+        const msgDiv = document.createElement('div');
+        msgDiv.className = 'message ai loading';
+        const contentDiv = document.createElement('div');
+        contentDiv.className = 'content';
+        contentDiv.innerHTML = `
+            <div class="typing-indicator">
+                <span></span><span></span><span></span>
+            </div>
+        `;
+        msgDiv.appendChild(contentDiv);
+        chatMessages.appendChild(msgDiv);
+        chatMessages.scrollTop = chatMessages.scrollHeight;
+        return msgDiv;
+    }
+
+    function removeLoading(loader) {
+        loader.remove();
+    }
+
+    // API: Initialize
+    initBtn.addEventListener('click', async () => {
+        const groqKey = groqKeyInput.value.trim();
+        const avKey = avKeyInput.value.trim();
+
+        if (!groqKey) {
+            alert('Please enter Groq API Key');
+            return;
+        }
+
+        try {
+            initBtn.disabled = true;
+            initBtn.textContent = 'Initializing...';
+
+            const res = await fetch('/api/init', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ groq_api_key: groqKey, alpha_vantage_key: avKey })
+            });
+
+            if (!res.ok) throw new Error((await res.json()).detail);
+
+            isInitialized = true;
+            statusDot.classList.add('connected');
+            statusText.textContent = 'Connected';
+            initBtn.textContent = 'Updated';
+            setTimeout(() => initBtn.textContent = 'Initialize Agent', 2000);
+            initBtn.disabled = false;
+
+            addMessage('Agent initialized successfully. Please upload a report.', 'system');
+        } catch (e) {
+            alert('Initialization failed: ' + e.message);
+            initBtn.disabled = false;
+            initBtn.textContent = 'Initialize Agent';
+        }
+    });
+
+    // File Upload Handling
+    dropZone.addEventListener('click', () => fileInput.click());
+
+    dropZone.addEventListener('dragover', (e) => {
+        e.preventDefault();
+        dropZone.classList.add('drag-over');
+    });
+
+    dropZone.addEventListener('dragleave', () => {
+        dropZone.classList.remove('drag-over');
+    });
+
+    dropZone.addEventListener('drop', (e) => {
+        e.preventDefault();
+        dropZone.classList.remove('drag-over');
+        if (e.dataTransfer.files.length) {
+            handleFileUpload(e.dataTransfer.files[0]);
+        }
+    });
+
+    fileInput.addEventListener('change', (e) => {
+        if (e.target.files.length) {
+            handleFileUpload(e.target.files[0]);
+        }
+    });
+
+    async function handleFileUpload(file) {
+        if (file.type !== 'application/pdf') {
+            alert('Only PDF files are allowed');
+            return;
+        }
+
+        if (!isInitialized) {
+            alert('Please initialize the agent with API keys first.');
+            return;
+        }
+
+        const formData = new FormData();
+        formData.append('file', file);
+
+        try {
+            addMessage(`Uploading ${file.name}...`, 'system');
+
+            const res = await fetch('/api/upload', {
+                method: 'POST',
+                body: formData
+            });
+
+            if (!res.ok) throw new Error((await res.json()).detail);
+
+            const data = await res.json();
+            fileInfo.classList.remove('hidden');
+            fileNameDisplay.textContent = file.name;
+            dropZone.classList.add('hidden');
+
+            addMessage(data.message + ' You can now ask questions.', 'system');
+
+            // Populate Metadata
+            if (data.metadata) {
+                document.getElementById('metadata-panel').classList.remove('hidden');
+                document.getElementById('metadata-placeholder').classList.add('hidden');
+
+                const cp = data.metadata.company_name || 'Unknown';
+                const fy = data.metadata.fiscal_year || 'Unknown';
+
+                document.getElementById('meta-company').textContent = cp;
+                document.getElementById('meta-type').textContent = data.metadata.report_type || 'Unknown';
+                document.getElementById('meta-year').textContent = fy;
+                document.getElementById('meta-currency').textContent = data.metadata.currency || 'Unknown';
+                document.getElementById('meta-source').textContent = data.metadata.data_source || 'Unknown';
+                document.getElementById('meta-pages').textContent = data.metadata.pages_analyzed || '0';
+
+                // Populate Metrics (Optional: Update dashboard grid if needed, or just leave as is)
+                if (data.metrics) {
+                    // Existing dashboard grid cards are static in HTML but could be updated here if we matched IDs. 
+                    // For now, removing the Hero Card logic as requested.
+                    // We can update the static dashboard grid using data.metrics if desired, but user just asked to remove hero card.
+                    // The old "Suggested Insights" panel remains visible.
+                }
+
+                sendBtn.disabled = false;
+                userInput.focus();
+            }
+        } catch (e) {
+            addMessage('Upload failed: ' + e.message, 'system');
+        }
+    }
+
+    // Chat Logic
+    async function sendMessage() {
+        const text = userInput.value.trim();
+        if (!text || !isInitialized || isProcessing) return;
+
+        addMessage(text, 'user');
+        userInput.value = '';
+        userInput.style.height = 'auto'; // reset height
+        isProcessing = true;
+        sendBtn.disabled = true;
+
+        const loader = addLoading();
+
+        try {
+            const res = await fetch('/api/chat', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ message: text })
+            });
+
+            if (!res.ok) throw new Error((await res.json()).detail);
+
+            removeLoading(loader);
+
+            // Create initial empty AI message
+            const aiMsg = addMessage('', 'ai');
+            const contentDiv = aiMsg.querySelector('.content');
+            let fullText = "";
+            let buffer = ""; // For accumulating JSON chunks if needed
+
+            const reader = res.body.getReader();
+            const decoder = new TextDecoder();
+
+            while (true) {
+                const { done, value } = await reader.read();
+                if (done) break;
+
+                const chunk = decoder.decode(value, { stream: true });
+                buffer += chunk;
+
+                // Check if we have a special JSON block
+                // Pattern: __JSON_START__{...}__JSON_END__
+                const jsonStart = buffer.indexOf('__JSON_START__');
+                const jsonEnd = buffer.indexOf('__JSON_END__');
+
+                if (jsonStart !== -1 && jsonEnd !== -1) {
+                    // We found a complete JSON block
+                    const jsonStr = buffer.substring(jsonStart + 14, jsonEnd);
+                    try {
+                        const jsonObj = JSON.parse(jsonStr);
+                        // Render Chart!
+                        // We might want to remove existing text if it was just "Generating..." or keep it.
+                        // For now let's just REPLACE the content with the chart renderer
+                        // Or append?
+                        // The agent logic yields the JSON block as a dedicated tool output.
+                        // Let's re-render the whole message as an "object" type content
+
+                        // Clear text buffer for this block
+                        fullText += buffer.substring(0, jsonStart); // any text before
+                        contentDiv.innerHTML = marked.parse(fullText); // render prior text
+
+                        // Hacky: re-use existing addMessage logic for objects by replacing contentDiv inner
+                        // Actually, addMessage creates new divs.
+                        // Let's manually trigger the chart rendering logic used in addMessage
+
+                        // Remove the temporary text node created by marked
+                        const chartContainer = document.createElement('div');
+                        chartContainer.style.marginTop = '1rem';
+                        chartContainer.style.height = '500px';
+                        chartContainer.style.width = '700px';
+
+                        const canvas = document.createElement('canvas');
+                        chartContainer.appendChild(canvas);
+                        contentDiv.appendChild(chartContainer);
+
+                        if (jsonObj.chart_data && jsonObj.chart_data.metrics) {
+                            const m = jsonObj.chart_data.metrics;
+                            const metricsDiv = document.createElement('div');
+                            metricsDiv.style.display = 'flex';
+                            metricsDiv.style.gap = '1rem';
+                            metricsDiv.style.marginTop = '1rem';
+                            metricsDiv.style.flexWrap = 'wrap';
+
+                            const createChip = (label, value) => `
+                                <div style="background:rgba(30,41,59,0.5); padding:0.5rem 1rem; border-radius:0.5rem; border:1px solid rgba(148,163,184,0.1); font-size:0.9rem;">
+                                    <span style="color:#94a3b8; font-weight:500;">${label}:</span>
+                                    <span style="color:#f8fafc; font-weight:600; margin-left:0.5rem;">${value || 'N/A'}</span>
+                                </div>
+                            `;
+
+                            metricsDiv.innerHTML =
+                                createChip('PE Ratio', m.pe_ratio) +
+                                createChip('Market Cap', m.market_cap) +
+                                createChip('Div Yield', m.dividend_yield);
+
+                            contentDiv.appendChild(metricsDiv);
+                        }
+
+                        // We need to access the Chart rendering logic. 
+                        // It's currently embedded inside addMessage. 
+                        // Refactoring addMessage to expose renderChart would be cleaner, but for this edit:
+                        // We will inline the chart render or call a helper if we extracted it.
+                        // Since we didn't extract it, let's just invoke a custom event or duplicate briefly?
+                        // Duplicate for safety/speed now, refactor later.
+
+                        // ... Chart.js setup ... (Duplicated from addMessage, ideally this is a helper)
+                        const ctx = canvas.getContext('2d');
+                        // ... (using simple config for now to verify trace) ...
+                        new Chart(ctx, {
+                            type: 'line',
+                            data: {
+                                labels: jsonObj.chart_data.dates,
+                                datasets: [{
+                                    label: `${jsonObj.chart_data.ticker} Price`,
+                                    data: jsonObj.chart_data.prices,
+                                    borderColor: '#8b5cf6',
+                                    borderWidth: 3,
+                                    tension: 0.4,
+                                    fill: true,
+                                    backgroundColor: (ctx) => {
+                                        const gradient = ctx.chart.ctx.createLinearGradient(0, 0, 0, 400);
+                                        gradient.addColorStop(0, 'rgba(139, 92, 246, 0.5)');
+                                        gradient.addColorStop(1, 'rgba(139, 92, 246, 0.0)');
+                                        return gradient;
+                                    }
+                                }]
+                            },
+                            options: { responsive: true, maintainAspectRatio: false }
+                        });
+
+                        // Remove used buffer
+                        buffer = buffer.substring(jsonEnd + 12);
+
+                    } catch (e) { console.error("JSON Parse error:", e); }
+                } else if (jsonStart === -1) {
+                    // No JSON starting in this buffer, so safe to render as text?
+                    // Be careful not to render partial __JSON
+                    // If buffer doesn't contain "__", safe to render?
+                    // Simple heuristic: If buffer is getting long and no __JSON_START__, flush it.
+
+                    fullText += buffer;
+                    contentDiv.innerHTML = marked.parse(fullText); // continually re-render markdown
+                    buffer = ""; // flushed
+
+                    // Auto-scroll
+                    chatMessages.scrollTop = chatMessages.scrollHeight;
+                }
+            }
+
+        } catch (e) {
+            removeLoading(loader);
+            addMessage('Error: ' + e.message, 'system');
+        } finally {
+            isProcessing = false;
+            sendBtn.disabled = false;
+        }
+    }
+
+    sendBtn.addEventListener('click', sendMessage);
+
+    userInput.addEventListener('keydown', (e) => {
+        if (e.key === 'Enter' && !e.shiftKey) {
+            e.preventDefault();
+            sendMessage();
+        }
+    });
+
+    // Auto-resize textarea
+    userInput.addEventListener('input', function () {
+        this.style.height = 'auto';
+        this.style.height = (this.scrollHeight) + 'px';
+    });
+
+    // Reset Chat
+    resetBtn.addEventListener('click', async () => {
+        if (!confirm("Are you sure you want to clear the conversation?")) return;
+
+        try {
+            await fetch('/api/reset', { method: 'POST' });
+            chatMessages.innerHTML = '';
+            addMessage('Conversation cleared.', 'system');
+        } catch (e) {
+            console.error(e);
+        }
+    });
+
+    // Export PDF
+    exportBtn.addEventListener('click', async () => {
+        if (!isInitialized) {
+            alert("Agent not initialized or no conversation to export.");
+            return;
+        }
+
+        try {
+            exportBtn.disabled = true;
+            exportBtn.textContent = 'Exporting...';
+
+            const res = await fetch('/api/export_pdf');
+            if (res.ok) {
+                const blob = await res.blob();
+                const url = window.URL.createObjectURL(blob);
+                const a = document.createElement('a');
+                a.href = url;
+                a.download = "financial_report.pdf";
+                document.body.appendChild(a);
+                a.click();
+                a.remove();
+                window.URL.revokeObjectURL(url);
+            } else {
+                const err = await res.json();
+                alert("Export failed: " + (err.detail || "Unknown error"));
+            }
+        } catch (e) {
+            alert("Export error: " + e.message);
+        } finally {
+            exportBtn.disabled = false;
+            exportBtn.textContent = 'Export PDF';
+        }
+    });
+
+    // Suggestion Handler
+    window.setInput = (text) => {
+        userInput.value = text;
+        userInput.focus();
+        // Optional: Auto send? Let's just fill for now so user can edit.
+        // sendMessage(); 
+    };
+}); // End of DOMContentLoaded
